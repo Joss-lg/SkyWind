@@ -1,0 +1,229 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const sections = [
+    {
+        id: "responsable",
+        title: "Responsable del tratamiento de datos personales",
+        body: `
+      <p>Skywind México, S.A. de C.V. (en adelante "Skywind"), con domicilio en Av. Juárez S/N, La Venta, Juchitán de Zaragoza, Oaxaca, México, C.P. 70104, es la empresa responsable del uso y protección de sus datos personales.</p>
+      <p>Para cualquier duda o solicitud relacionada con el presente aviso, puede comunicarse a: <strong>contacto@skywindmexico.com</strong></p>
+    `,
+    },
+    {
+        id: "datos",
+        title: "Datos personales que recabamos",
+        body: `
+      <p>Skywind podrá recabar los siguientes datos personales:</p>
+      <ul>
+        <li><strong>Datos de identificación:</strong> nombre completo, firma.</li>
+        <li><strong>Datos de contacto:</strong> correo electrónico, número de teléfono, dirección.</li>
+        <li><strong>Datos laborales:</strong> empresa, cargo o puesto, área de especialidad.</li>
+        <li><strong>Datos financieros y patrimoniales</strong> (exclusivamente para relaciones contractuales): referencias bancarias, RFC.</li>
+        <li><strong>Datos de navegación:</strong> dirección IP, tipo de navegador, páginas visitadas dentro del sitio web.</li>
+      </ul>
+      <p>Skywind no recaba datos personales sensibles a través de este sitio web.</p>
+    `,
+    },
+    {
+        id: "finalidades",
+        title: "Finalidades del tratamiento",
+        body: `
+      <p><strong>Finalidades primarias</strong> (necesarias para la relación jurídica):</p>
+      <ul>
+        <li>Atender solicitudes de información, cotización y contacto.</li>
+        <li>Gestionar relaciones contractuales con clientes, proveedores y socios comerciales.</li>
+        <li>Cumplir obligaciones legales y fiscales.</li>
+        <li>Dar seguimiento a proyectos y propuestas de trabajo.</li>
+      </ul>
+      <p><strong>Finalidades secundarias</strong> (puede oponerse):</p>
+      <ul>
+        <li>Enviar comunicados sobre noticias, eventos o proyectos de Skywind.</li>
+        <li>Elaborar estudios estadísticos internos.</li>
+        <li>Mejorar la experiencia en el sitio web.</li>
+      </ul>
+      <p>Si no desea que sus datos sean tratados para las finalidades secundarias, puede manifestarlo enviando un correo a <strong>contacto@skywindmexico.com</strong> con el asunto "Oposición finalidades secundarias".</p>
+    `,
+    },
+    {
+        id: "arco",
+        title: "Derechos ARCO",
+        body: `
+      <p>Conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), usted tiene derecho a:</p>
+      <ul>
+        <li><strong>Acceso:</strong> conocer qué datos personales tenemos de usted y cómo los usamos.</li>
+        <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos o incompletos.</li>
+        <li><strong>Cancelación:</strong> pedir la supresión de sus datos cuando ya no sean necesarios.</li>
+        <li><strong>Oposición:</strong> oponerse al tratamiento de sus datos para fines específicos.</li>
+      </ul>
+      <p>Para ejercer sus derechos ARCO, envíe un correo a <strong>contacto@skywindmexico.com</strong> con:</p>
+      <ul>
+        <li>Nombre completo e identificación oficial.</li>
+        <li>Descripción clara del derecho que desea ejercer.</li>
+        <li>Documentos que sustenten su solicitud (cuando aplique).</li>
+      </ul>
+      <p>Skywind dará respuesta en un plazo máximo de 20 días hábiles.</p>
+    `,
+    },
+    {
+        id: "transferencias",
+        title: "Transferencia de datos personales",
+        body: `
+      <p>Skywind no transferirá sus datos personales a terceros sin su consentimiento, salvo en los casos siguientes previstos por la LFPDPPP:</p>
+      <ul>
+        <li>Cuando sea necesario para cumplir obligaciones derivadas de una relación jurídica con usted.</li>
+        <li>Cuando así lo requiera una autoridad competente en ejercicio de sus atribuciones.</li>
+        <li>Cuando sea necesario para el mantenimiento o cumplimiento de una relación jurídica entre el responsable y el titular.</li>
+      </ul>
+      <p>En caso de requerir su consentimiento para transferencias adicionales, se le comunicará previamente.</p>
+    `,
+    },
+    {
+        id: "cookies",
+        title: "Uso de cookies y tecnologías de rastreo",
+        body: `
+      <p>Este sitio web utiliza cookies con fines estadísticos y de mejora de la experiencia de navegación. Las cookies no recaban datos personales sensibles.</p>
+      <p>Puede desactivar el uso de cookies a través de la configuración de su navegador; sin embargo, esto puede afectar la funcionalidad de algunas secciones del sitio.</p>
+    `,
+    },
+    {
+        id: "cambios",
+        title: "Cambios al aviso de privacidad",
+        body: `
+      <p>Skywind se reserva el derecho de modificar el presente Aviso de Privacidad en cualquier momento. Los cambios serán notificados a través de este sitio web. Se recomienda revisar periódicamente esta página.</p>
+      <p><strong>Última actualización:</strong> octubre de 2024.</p>
+    `,
+    },
+];
+---
+
+<Layout
+    title="Aviso de Privacidad — Skywind México"
+    description="Aviso de privacidad de Skywind México conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares."
+>
+    <Nav />
+
+    <!-- Hero -->
+    <section class="bg-noche pt-40 pb-20 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_50%,rgba(23,98,212,0.12),transparent_60%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <p
+                class="hero-badge text-cielo text-sm font-medium tracking-wide mb-4"
+            >
+                Legal
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-[-0.035em] leading-[1.05] text-white mb-4 max-w-3xl text-balance"
+            >
+                Aviso de Privacidad
+            </h1>
+            <p
+                class="hero-body text-niebla text-base leading-[1.7] max-w-[52ch]"
+            >
+                Skywind México está comprometida con la protección de sus datos
+                personales conforme a la legislación mexicana vigente.
+            </p>
+        </div>
+    </section>
+
+    <main class="bg-alba">
+        <div class="max-w-[860px] mx-auto px-6 py-20">
+            <!-- Índice -->
+            <nav
+                class="mb-14 bg-white border border-[#D5E2F0] rounded-xl p-7"
+                aria-label="Tabla de contenidos"
+            >
+                <p class="text-noche font-bold text-sm mb-4">Contenido</p>
+                <ol class="flex flex-col gap-2">
+                    {
+                        sections.map((s, i) => (
+                            <li>
+                                <a
+                                    href={`#${s.id}`}
+                                    class="text-sm text-cielo hover:underline"
+                                >
+                                    {i + 1}. {s.title}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ol>
+            </nav>
+
+            <!-- Secciones -->
+            <div class="flex flex-col gap-12">
+                {
+                    sections.map((s, i) => (
+                        <section id={s.id} data-reveal>
+                            <h2 class="text-noche font-extrabold text-xl mb-5 flex items-start gap-3">
+                                <span class="text-cielo font-mono text-base mt-0.5 shrink-0">
+                                    {String(i + 1).padStart(2, "0")}
+                                </span>
+                                {s.title}
+                            </h2>
+                            <div class="prose-skywind" set:html={s.body} />
+                        </section>
+                    ))
+                }
+            </div>
+
+            <!-- Pie -->
+            <div
+                class="mt-16 border-t border-[#D5E2F0] pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+            >
+                <p class="text-sm text-[#4A6480]">
+                    ¿Tiene dudas sobre este aviso?
+                </p>
+                <a
+                    href="/contacto"
+                    class="px-6 py-2.5 rounded-md bg-cielo text-white text-sm font-semibold hover:bg-blue-700 transition-colors"
+                >
+                    Contáctenos
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .prose-skywind :global(p) {
+        color: #4a6480;
+        line-height: 1.75;
+        margin-bottom: 0.85rem;
+    }
+    .prose-skywind :global(ul) {
+        margin: 0.6rem 0 1rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+    .prose-skywind :global(li) {
+        color: #4a6480;
+        font-size: 0.9375rem;
+        line-height: 1.65;
+        padding-left: 1.25rem;
+        position: relative;
+    }
+    .prose-skywind :global(li::before) {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.62em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #1762d4;
+    }
+    .prose-skywind :global(strong) {
+        color: #0d2137;
+        font-weight: 600;
+    }
+</style>

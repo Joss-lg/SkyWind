@@ -1,0 +1,156 @@
+---
+// CookieBanner.astro — banner de consentimiento de cookies / aviso de privacidad
+// Se muestra en la primera visita y se oculta tras aceptar o cerrar (localStorage)
+---
+
+<div
+    id="cookie-banner"
+    role="dialog"
+    aria-label="Aviso de privacidad y cookies"
+    aria-modal="false"
+    hidden
+    class="fixed bottom-0 left-0 right-0 z-[9999] p-4 sm:p-6"
+>
+    <div
+        class="max-w-3xl mx-auto bg-noche border border-[#1E3A5C] rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-md p-6 flex flex-col sm:flex-row items-start sm:items-center gap-5"
+    >
+        <!-- Ícono -->
+        <div
+            class="shrink-0 w-10 h-10 rounded-lg bg-viento/15 border border-viento/25 flex items-center justify-center"
+        >
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+            >
+                <path
+                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                    stroke="#0CBF82"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path
+                    d="M12 8v4M12 16h.01"
+                    stroke="#0CBF82"
+                    stroke-width="1.75"
+                    stroke-linecap="round"></path>
+            </svg>
+        </div>
+
+        <!-- Texto -->
+        <div class="flex-1 min-w-0">
+            <p class="text-white text-sm font-semibold mb-1">
+                Aviso de privacidad y cookies
+            </p>
+            <p class="text-niebla text-xs leading-[1.65]">
+                Usamos cookies para mejorar tu experiencia. Al continuar
+                navegando aceptas nuestro
+                <a
+                    href="/aviso-de-privacidad"
+                    class="text-viento underline underline-offset-2 hover:text-white transition-colors"
+                >
+                    Aviso de Privacidad
+                </a>.
+            </p>
+        </div>
+
+        <!-- Botones -->
+        <div class="flex items-center gap-3 shrink-0 w-full sm:w-auto">
+            <button
+                id="cookie-reject"
+                class="flex-1 sm:flex-none px-4 py-2 rounded-md border border-[#1E3A5C] text-niebla text-xs font-semibold hover:border-white/30 hover:text-white transition-colors"
+            >
+                Solo esenciales
+            </button>
+            <button
+                id="cookie-accept"
+                class="flex-1 sm:flex-none px-5 py-2 rounded-md bg-viento text-noche text-xs font-bold hover:bg-[#09A870] transition-colors"
+            >
+                Aceptar todo
+            </button>
+        </div>
+
+        <!-- Cerrar -->
+        <button
+            id="cookie-close"
+            aria-label="Cerrar"
+            class="absolute top-4 right-4 text-niebla hover:text-white transition-colors"
+        >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M18 6L6 18M6 6l12 12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<script>
+    const STORAGE_KEY = "skywind_cookie_consent";
+    const banner = document.getElementById(
+        "cookie-banner",
+    ) as HTMLElement | null;
+
+    function hideBanner() {
+        if (banner) {
+            banner.style.transform = "translateY(110%)";
+            banner.style.opacity = "0";
+            setTimeout(() => {
+                banner.hidden = true;
+            }, 400);
+        }
+    }
+
+    function saveAndHide(value: string) {
+        try {
+            localStorage.setItem(STORAGE_KEY, value);
+        } catch (_) {}
+        hideBanner();
+    }
+
+    // Mostrar sólo si no hay preferencia guardada
+    const saved = (() => {
+        try {
+            return localStorage.getItem(STORAGE_KEY);
+        } catch {
+            return null;
+        }
+    })();
+    if (!saved && banner) {
+        banner.hidden = false;
+        // Pequeño delay para que la transición de entrada sea visible
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                banner.style.transform = "translateY(0)";
+                banner.style.opacity = "1";
+            });
+        });
+    }
+
+    document
+        .getElementById("cookie-accept")
+        ?.addEventListener("click", () => saveAndHide("all"));
+    document
+        .getElementById("cookie-reject")
+        ?.addEventListener("click", () => saveAndHide("essential"));
+    document
+        .getElementById("cookie-close")
+        ?.addEventListener("click", () => saveAndHide("dismissed"));
+</script>
+
+<style>
+    #cookie-banner {
+        transform: translateY(110%);
+        opacity: 0;
+        transition:
+            transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.4s ease;
+    }
+    #cookie-banner:not([hidden]) {
+        /* el JS anima via requestAnimationFrame */
+    }
+</style>

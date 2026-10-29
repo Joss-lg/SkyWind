@@ -1,0 +1,128 @@
+---
+const cols = [
+    {
+        title: "Servicios",
+        links: [
+            { label: "Energía Eólica", href: "/eolica" },
+            { label: "Energía Solar", href: "/energia-solar" },
+            {
+                label: "Energía Hidroeléctrica",
+                href: "/energia-hidroelectrica",
+            },
+            { label: "Obra Civil", href: "/obra-civil" },
+            { label: "Ver todos", href: "/servicio" },
+        ],
+    },
+    {
+        title: "Empresa",
+        links: [
+            { label: "Acerca de Skywind", href: "/acerca-de-skywind" },
+            { label: "Clientes", href: "/clientes" },
+            { label: "Noticias", href: "/noticias" },
+            { label: "Contacto", href: "/contacto" },
+            { label: "Canal Ético", href: "/#canal-etico" },
+        ],
+    },
+    {
+        title: "Legal",
+        links: [
+            { label: "Aviso de Privacidad", href: "/aviso-de-privacidad" },
+            { label: "Política de Calidad", href: "/politica-de-calidad" },
+            {
+                label: "Política de Seguridad",
+                href: "/politica-de-seguridad-y-salud",
+            },
+            { label: "Política Ambiental", href: "/politica-ambiental" },
+            { label: "Política Anti Soborno", href: "/politica-anti-soborno" },
+            { label: "Código de Ética", href: "/codigo-de-etica-y-conducta" },
+        ],
+    },
+];
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-noche text-niebla">
+    <!-- Banda superior -->
+    <div class="border-b border-borde">
+        <div
+            class="max-w-container mx-auto px-6 py-11 flex flex-wrap items-center gap-6"
+        >
+            <a
+                href="/"
+                class="flex items-center gap-2.5 shrink-0"
+                aria-label="Skywind — Inicio"
+            >
+                <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    aria-hidden="true"
+                >
+                    <circle cx="16" cy="16" r="3" fill="#0CBF82"></circle>
+                    <path
+                        d="M16 13L13.5 4.5Q13 2 16 2Q19 2 18.5 4.5Z"
+                        fill="white"
+                        opacity=".95"></path>
+                    <path
+                        d="M16 19L23.5 26.5Q26 29 23 31Q20 33 19 30Z"
+                        fill="white"
+                        opacity=".7"></path>
+                    <path
+                        d="M16 19L6.5 23.5Q3.5 25 3 22Q2.5 19 5.5 19.5Z"
+                        fill="white"
+                        opacity=".5"></path>
+                </svg>
+                <span
+                    class="text-white font-bold text-[1.05rem] tracking-widest"
+                    >SKYWIND</span
+                >
+            </a>
+            <p class="text-sm flex-1">
+                Proyectos de energía renovable en México
+            </p>
+            <a
+                href="/contacto"
+                class="px-5 py-2 rounded-md bg-cielo text-white text-sm font-semibold hover:bg-blue-700 transition-colors shrink-0"
+            >
+                Iniciar un proyecto
+            </a>
+        </div>
+    </div>
+
+    <!-- Columnas de links -->
+    <div
+        class="max-w-container mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8"
+    >
+        {
+            cols.map((col) => (
+                <div>
+                    <p class="text-[0.6875rem] font-semibold tracking-[0.07em] text-white/30 uppercase mb-4">
+                        {col.title}
+                    </p>
+                    <ul class="flex flex-col gap-2">
+                        {col.links.map((l) => (
+                            <li>
+                                <a
+                                    href={l.href}
+                                    class="text-sm text-niebla hover:text-white transition-colors leading-relaxed"
+                                >
+                                    {l.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))
+        }
+    </div>
+
+    <!-- Base -->
+    <div class="border-t border-borde">
+        <div class="max-w-container mx-auto px-6 py-5">
+            <p class="text-xs text-white/30">
+                © {year} Skywind México. Todos los derechos reservados.
+            </p>
+        </div>
+    </div>
+</footer>

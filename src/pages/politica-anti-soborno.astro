@@ -1,0 +1,213 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const prohibiciones = [
+    "Ofrecer, prometer, dar o autorizar el pago de dinero, regalos, favores u otros beneficios a servidores públicos o a empleados de clientes y proveedores con el fin de obtener o conservar contratos.",
+    "Solicitar o aceptar, directa o indirectamente, cualquier tipo de soborno o pago indebido a nombre de Skywind.",
+    "Utilizar intermediarios, agentes o terceros para canalizar pagos inapropiados.",
+    'Realizar pagos de facilitación ("mordidas") para agilizar trámites, permisos u otros procedimientos gubernamentales.',
+    "Falsificar registros contables para encubrir pagos relacionados con soborno.",
+];
+
+const obligaciones = [
+    "Reportar de inmediato cualquier solicitud de soborno, ya sea recibida o conocida, al responsable de cumplimiento o al Canal Ético.",
+    "Cooperar plenamente con las investigaciones internas o externas relacionadas con conductas de soborno.",
+    "Completar la capacitación en materia anti-soborno cuando sea requerida.",
+    "Mantener registros precisos y transparentes de todas las operaciones comerciales.",
+    "Evaluar el riesgo de soborno antes de establecer relaciones con nuevos socios, agentes o intermediarios.",
+];
+---
+
+<Layout
+    title="Política Anti Soborno — Skywind México"
+    description="Política de prevención del soborno y la corrupción de Skywind México, conforme a las mejores prácticas internacionales."
+>
+    <Nav />
+
+    <!-- Hero -->
+    <section class="bg-noche pt-40 pb-20 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_55%_50%,rgba(23,98,212,0.12),transparent_60%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <p
+                class="hero-badge text-cielo text-sm font-medium tracking-wide mb-4"
+            >
+                Ética Empresarial
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-[-0.035em] leading-[1.05] text-white mb-4 max-w-3xl text-balance"
+            >
+                Política Anti Soborno
+            </h1>
+            <p
+                class="hero-body text-niebla text-base leading-[1.7] max-w-[52ch]"
+            >
+                Skywind México rechaza en forma absoluta el soborno y la
+                corrupción en todas sus formas. Operamos con transparencia,
+                integridad y respeto a la ley en cada relación comercial.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section class="bg-alba py-20">
+            <div class="max-w-[860px] mx-auto px-6">
+                <!-- Declaración -->
+                <div
+                    class="bg-white border border-[#D5E2F0] rounded-2xl p-10 mb-12"
+                    data-reveal
+                >
+                    <p
+                        class="text-cielo text-xs font-semibold tracking-widest uppercase mb-5"
+                    >
+                        Declaración de política
+                    </p>
+                    <blockquote
+                        class="text-noche text-lg leading-[1.8] font-medium border-l-4 border-cielo pl-6"
+                    >
+                        Skywind México prohíbe el soborno en cualquier forma —
+                        directa o indirecta — tanto en el sector público como en
+                        el privado. Esta prohibición se aplica a todos los
+                        directivos, empleados, contratistas, agentes y cualquier
+                        persona que actúe en nombre de la empresa, sin importar
+                        el país o jurisdicción donde operen.
+                    </blockquote>
+                </div>
+
+                <!-- Conductas prohibidas -->
+                <header class="mb-8" data-reveal>
+                    <p
+                        class="text-cielo text-sm font-medium tracking-wide mb-2"
+                    >
+                        Conductas prohibidas
+                    </p>
+                    <h2
+                        class="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold tracking-[-0.03em] leading-[1.1] text-noche"
+                    >
+                        Qué no permitimos
+                    </h2>
+                </header>
+                <div class="flex flex-col gap-3 mb-14" data-reveal>
+                    {
+                        prohibiciones.map((p, i) => (
+                            <div class="bg-white border border-[#D5E2F0] rounded-xl p-5 flex items-start gap-4">
+                                <span class="w-7 h-7 rounded-full bg-red-50 border border-red-200 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg
+                                        width="14"
+                                        height="14"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M18 6L6 18M6 6l12 12"
+                                            stroke="#DC2626"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                        />
+                                    </svg>
+                                </span>
+                                <p class="text-[#4A6480] text-sm leading-[1.65]">
+                                    {p}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <!-- Obligaciones -->
+                <header class="mb-8" data-reveal>
+                    <p
+                        class="text-cielo text-sm font-medium tracking-wide mb-2"
+                    >
+                        Obligaciones del personal
+                    </p>
+                    <h2
+                        class="text-[clamp(1.5rem,3vw,2rem)] font-extrabold tracking-[-0.03em] leading-[1.1] text-noche"
+                    >
+                        Cómo actuamos
+                    </h2>
+                </header>
+                <div class="flex flex-col gap-3 mb-14" data-reveal>
+                    {
+                        obligaciones.map((o) => (
+                            <div class="bg-white border border-[#D5E2F0] rounded-xl p-5 flex items-start gap-4">
+                                <span class="w-7 h-7 rounded-full bg-cielo/10 border border-cielo/20 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg
+                                        width="14"
+                                        height="14"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M5 13l4 4L19 7"
+                                            stroke="#1762D4"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </span>
+                                <p class="text-[#4A6480] text-sm leading-[1.65]">
+                                    {o}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <!-- Canal de denuncia -->
+                <div data-reveal class="bg-noche rounded-2xl p-10">
+                    <p
+                        class="text-viento text-xs font-semibold tracking-widest uppercase mb-4"
+                    >
+                        Canal de denuncia
+                    </p>
+                    <h3 class="text-white font-extrabold text-xl mb-3">
+                        Reporta en confianza
+                    </h3>
+                    <p class="text-niebla text-sm leading-[1.75] mb-6">
+                        Cualquier persona que conozca o sospeche de un acto de
+                        soborno puede reportarlo de forma confidencial y sin
+                        represalias a través del Canal Ético de Skywind México.
+                        Las denuncias de buena fe están protegidas por la
+                        política de no represalias.
+                    </p>
+                    <a
+                        href="https://denuncias.skywindmexico.com/prueba_skywind/prueba/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-viento text-noche font-bold text-sm hover:bg-[#09A870] transition-colors"
+                    >
+                        Acceder al Canal Ético
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            ><path
+                                d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"
+                                stroke="currentColor"
+                                stroke-width="1.75"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        >
+                    </a>
+                </div>
+
+                <p class="mt-10 text-xs text-[#4A6480]">
+                    Última revisión: octubre de 2024. El incumplimiento de esta
+                    política puede dar lugar a medidas disciplinarias hasta la
+                    rescisión de la relación laboral o contractual, además de
+                    las responsabilidades penales aplicables.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

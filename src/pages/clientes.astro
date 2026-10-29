@@ -1,0 +1,248 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const sectores = [
+    {
+        label: "Sector Público",
+        color: "#1762D4",
+        clientes: [
+            {
+                nombre: "CFE — Comisión Federal de Electricidad",
+                desc: "Trabajos de construcción y mantenimiento en infraestructura de generación renovable.",
+            },
+            {
+                nombre: "SENER — Secretaría de Energía",
+                desc: "Proyectos de infraestructura dentro del programa de transición energética.",
+            },
+            {
+                nombre: "Gobierno del Estado",
+                desc: "Obras de energía renovable para dependencias estatales.",
+            },
+        ],
+    },
+    {
+        label: "Sector Privado",
+        color: "#0CBF82",
+        clientes: [
+            {
+                nombre: "Desarrolladores de parques eólicos",
+                desc: "Constructoras especializadas en energía eólica con proyectos en el sureste de México.",
+            },
+            {
+                nombre: "Empresas del sector energético",
+                desc: "Compañías privadas con proyectos fotovoltaicos y de generación distribuida.",
+            },
+            {
+                nombre: "Industria y manufactura",
+                desc: "Empresas que adoptan energías renovables para sus operaciones.",
+            },
+        ],
+    },
+];
+
+const proyectos = [
+    {
+        tipo: "Eólico",
+        estado: "Oaxaca",
+        desc: "Cimentaciones y obra civil para parque eólico.",
+    },
+    {
+        tipo: "Solar",
+        estado: "Sonora",
+        desc: "Instalación de estructura y paneles en planta FV.",
+    },
+    {
+        tipo: "Hidro",
+        estado: "Veracruz",
+        desc: "Rehabilitación de central hidroeléctrica.",
+    },
+    {
+        tipo: "Civil",
+        estado: "Jalisco",
+        desc: "Caminos de acceso y plataformas para parque eólico.",
+    },
+    {
+        tipo: "Eólico",
+        estado: "Tamaulipas",
+        desc: "Tendido de cable de media tensión en parque eólico.",
+    },
+    {
+        tipo: "Solar",
+        estado: "Yucatán",
+        desc: "Obra civil y electromecánica en planta solar.",
+    },
+];
+
+const colorTipo: Record<string, string> = {
+    Eólico: "#1762D4",
+    Solar: "#0CBF82",
+    Hidro: "#1762D4",
+    Civil: "#7A9CB8",
+};
+---
+
+<Layout
+    title="Clientes — Skywind México"
+    description="Clientes y proyectos representativos de Skywind México en energía eólica, solar, hidroeléctrica y obra civil."
+>
+    <Nav />
+
+    <!-- Hero -->
+    <section class="bg-noche pt-40 pb-24 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_50%,rgba(12,191,130,0.1),transparent_60%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <p
+                class="hero-badge text-viento text-sm font-medium tracking-wide mb-4"
+            >
+                Clientes
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.035em] leading-[1.03] text-white mb-6 max-w-3xl text-balance"
+            >
+                Empresas e instituciones que confían en Skywind
+            </h1>
+            <p class="hero-body text-niebla text-lg leading-[1.7] max-w-[48ch]">
+                Trabajamos con el sector público y privado en proyectos de
+                energía renovable a lo largo de la república mexicana.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Sectores -->
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-alba">
+            <div
+                class="max-w-container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10"
+            >
+                {
+                    sectores.map((s, i) => (
+                        <div
+                            data-reveal
+                            data-delay={String(i + 1)}
+                            class="bg-white border border-[#D5E2F0] rounded-2xl p-8"
+                        >
+                            <div class="flex items-center gap-3 mb-7">
+                                <span
+                                    class="w-2 h-6 rounded-full"
+                                    style={`background: ${s.color}`}
+                                />
+                                <h2 class="text-noche font-extrabold text-xl">
+                                    {s.label}
+                                </h2>
+                            </div>
+                            <ul class="flex flex-col gap-6">
+                                {s.clientes.map((c) => (
+                                    <li class="flex flex-col gap-1 pb-6 border-b border-[#D5E2F0] last:border-0 last:pb-0">
+                                        <span class="text-noche font-semibold leading-snug">
+                                            {c.nombre}
+                                        </span>
+                                        <span class="text-[#4A6480] text-sm leading-[1.6]">
+                                            {c.desc}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))
+                }
+            </div>
+        </section>
+
+        <!-- Proyectos representativos -->
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-noche">
+            <div class="max-w-container mx-auto px-6">
+                <header class="mb-12" data-reveal>
+                    <p
+                        class="text-viento text-sm font-medium tracking-wide mb-4"
+                    >
+                        Proyectos representativos
+                    </p>
+                    <h2
+                        class="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-white"
+                    >
+                        Presencia en todo México
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-borde border border-borde rounded-xl overflow-hidden"
+                >
+                    {
+                        proyectos.map((p, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String((i % 3) + 1)}
+                                class="bg-oceano p-7 flex flex-col gap-3 hover:bg-[#122C48] transition-colors"
+                            >
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="text-xs font-semibold px-2.5 py-1 rounded-full"
+                                        style={`background: ${colorTipo[p.tipo]}25; color: ${colorTipo[p.tipo]}`}
+                                    >
+                                        {p.tipo}
+                                    </span>
+                                    <span class="text-niebla text-xs">
+                                        {p.estado}
+                                    </span>
+                                </div>
+                                <p class="text-white/80 text-sm leading-[1.65]">
+                                    {p.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonio / CTA -->
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-alba">
+            <div
+                class="max-w-container mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 items-center"
+            >
+                <div>
+                    <p
+                        class="text-viento text-sm font-medium tracking-wide mb-4"
+                    >
+                        ¿Trabajamos juntos?
+                    </p>
+                    <h2
+                        class="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-noche mb-4"
+                    >
+                        Tu proyecto es el próximo
+                    </h2>
+                    <p
+                        class="text-[#4A6480] leading-[1.75] text-lg max-w-[46ch]"
+                    >
+                        Ya sea un proyecto nuevo o la continuación de uno en
+                        marcha, tenemos la experiencia y el equipo para
+                        ejecutarlo con calidad y seguridad.
+                    </p>
+                </div>
+                <div
+                    class="flex flex-col sm:flex-row lg:flex-col gap-4 shrink-0"
+                >
+                    <a
+                        href="/contacto"
+                        class="px-7 py-3.5 rounded-md bg-cielo text-white font-bold text-center hover:bg-blue-700 transition-colors"
+                    >
+                        Iniciar proyecto
+                    </a>
+                    <a
+                        href="/servicio"
+                        class="px-7 py-3.5 rounded-md border border-[#D5E2F0] text-noche font-bold text-center hover:border-cielo hover:text-cielo transition-colors"
+                    >
+                        Ver servicios
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

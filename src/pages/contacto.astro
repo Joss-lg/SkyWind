@@ -1,0 +1,382 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+    title="Contacto — Skywind México"
+    description="Contáctanos para proyectos de energía renovable. Respondemos en 48 horas hábiles. Ubicados en Juchitán de Zaragoza, Oaxaca."
+>
+    <Nav />
+
+    <!-- Hero -->
+    <section class="bg-noche pt-40 pb-24 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_50%,rgba(23,98,212,0.15),transparent_65%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <p
+                class="hero-badge text-viento text-xs font-semibold tracking-widest uppercase mb-5"
+            >
+                Contacto
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.035em] leading-[1.03] text-white mb-6 text-balance max-w-3xl"
+            >
+                Hablemos de tu proyecto
+            </h1>
+            <p class="hero-body text-niebla text-lg leading-[1.7] max-w-[46ch]">
+                Cuéntanos lo que necesitas y un especialista te contactará en un
+                plazo de 48 horas hábiles para asesorarte sin compromiso.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section class="py-[clamp(4rem,8vw,7rem)] bg-alba">
+            <div
+                class="max-w-container mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-16 items-start"
+            >
+                <!-- Formulario -->
+                <div data-reveal>
+                    <form
+                        id="contact-form"
+                        class="flex flex-col gap-6"
+                        novalidate
+                    >
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    for="nombre"
+                                    class="text-noche text-sm font-semibold"
+                                    >Nombre completo</label
+                                >
+                                <input
+                                    id="nombre"
+                                    name="nombre"
+                                    type="text"
+                                    required
+                                    placeholder="Ej. María González"
+                                    class="bg-white border border-[#C8D9EA] rounded-lg px-4 py-3 text-noche placeholder:text-[#9BB2C8] focus:outline-none focus:border-cielo focus:ring-2 focus:ring-cielo/20 transition-all"
+                                />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    for="empresa"
+                                    class="text-noche text-sm font-semibold"
+                                    >Empresa <span
+                                        class="text-[#9BB2C8] font-normal"
+                                        >(opcional)</span
+                                    ></label
+                                >
+                                <input
+                                    id="empresa"
+                                    name="empresa"
+                                    type="text"
+                                    placeholder="Nombre de tu empresa"
+                                    class="bg-white border border-[#C8D9EA] rounded-lg px-4 py-3 text-noche placeholder:text-[#9BB2C8] focus:outline-none focus:border-cielo focus:ring-2 focus:ring-cielo/20 transition-all"
+                                />
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    for="email"
+                                    class="text-noche text-sm font-semibold"
+                                    >Correo electrónico</label
+                                >
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    required
+                                    placeholder="tu@empresa.com"
+                                    class="bg-white border border-[#C8D9EA] rounded-lg px-4 py-3 text-noche placeholder:text-[#9BB2C8] focus:outline-none focus:border-cielo focus:ring-2 focus:ring-cielo/20 transition-all"
+                                />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    for="telefono"
+                                    class="text-noche text-sm font-semibold"
+                                    >Teléfono <span
+                                        class="text-[#9BB2C8] font-normal"
+                                        >(opcional)</span
+                                    ></label
+                                >
+                                <input
+                                    id="telefono"
+                                    name="telefono"
+                                    type="tel"
+                                    placeholder="+52 971 123 4567"
+                                    class="bg-white border border-[#C8D9EA] rounded-lg px-4 py-3 text-noche placeholder:text-[#9BB2C8] focus:outline-none focus:border-cielo focus:ring-2 focus:ring-cielo/20 transition-all"
+                                />
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label
+                                for="servicio"
+                                class="text-noche text-sm font-semibold"
+                                >Área de interés</label
+                            >
+                            <select
+                                id="servicio"
+                                name="servicio"
+                                class="bg-white border border-[#C8D9EA] rounded-lg px-4 py-3 text-noche focus:outline-none focus:border-cielo focus:ring-2 focus:ring-cielo/20 transition-all appearance-none"
+                            >
+                                <option value="" disabled selected
+                                    >Selecciona una opción</option
+                                >
+                                <option value="eolica">Energía Eólica</option>
+                                <option value="solar">Energía Solar</option>
+                                <option value="hidroelectrica"
+                                    >Energía Hidroeléctrica</option
+                                >
+                                <option value="civil">Obra Civil</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label
+                                for="mensaje"
+                                class="text-noche text-sm font-semibold"
+                                >Mensaje</label
+                            >
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="5"
+                                required
+                                placeholder="Describe brevemente tu proyecto o consulta..."
+                                class="bg-white border border-[#C8D9EA] rounded-lg px-4 py-3 text-noche placeholder:text-[#9BB2C8] focus:outline-none focus:border-cielo focus:ring-2 focus:ring-cielo/20 transition-all resize-none"
+                            ></textarea>
+                        </div>
+                        <button
+                            type="submit"
+                            class="self-start inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-cielo text-white font-bold hover:bg-blue-700 transition-all hover:-translate-y-px shadow-[0_0_20px_rgba(23,98,212,0.3)]"
+                        >
+                            Enviar mensaje
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                aria-hidden="true"
+                                ><path
+                                    d="M3 8h10M9 4l4 4-4 4"
+                                    stroke="currentColor"
+                                    stroke-width="1.75"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path></svg
+                            >
+                        </button>
+                    </form>
+
+                    <!-- Mensaje éxito -->
+                    <div
+                        id="form-success"
+                        class="hidden mt-8 bg-viento/10 border border-viento/30 rounded-xl p-6 flex items-center gap-4"
+                    >
+                        <svg
+                            class="text-viento shrink-0"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            ><path
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                stroke="currentColor"
+                                stroke-width="1.75"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        >
+                        <div>
+                            <p class="text-noche font-bold">Mensaje enviado</p>
+                            <p class="text-[#4A6480] text-sm mt-1">
+                                Nos pondremos en contacto contigo en menos de 48
+                                horas hábiles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info de contacto -->
+                <aside class="flex flex-col gap-6">
+                    <!-- Dirección -->
+                    <div
+                        data-reveal
+                        data-delay="1"
+                        class="bg-noche rounded-2xl p-7 flex flex-col gap-4"
+                    >
+                        <div
+                            class="w-10 h-10 rounded-lg bg-cielo/15 flex items-center justify-center text-cielo"
+                        >
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                ><path
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                    stroke="currentColor"
+                                    stroke-width="1.75"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path><circle
+                                    cx="12"
+                                    cy="11"
+                                    r="3"
+                                    stroke="currentColor"
+                                    stroke-width="1.75"></circle></svg
+                            >
+                        </div>
+                        <div>
+                            <p
+                                class="text-niebla text-xs font-semibold tracking-wide uppercase mb-2"
+                            >
+                                Dirección
+                            </p>
+                            <p class="text-white font-medium leading-relaxed">
+                                Av. Juárez Sn. La Venta<br />
+                                Juchitán De Zaragoza, Oaxaca<br />
+                                México. C.P. 70104
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tiempo de respuesta -->
+                    <div
+                        data-reveal
+                        data-delay="2"
+                        class="bg-oceano rounded-2xl p-7 flex flex-col gap-4"
+                    >
+                        <div
+                            class="w-10 h-10 rounded-lg bg-viento/15 flex items-center justify-center text-viento"
+                        >
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                ><circle
+                                    cx="12"
+                                    cy="12"
+                                    r="9"
+                                    stroke="currentColor"
+                                    stroke-width="1.75"></circle><path
+                                    d="M12 7v5l3 3"
+                                    stroke="currentColor"
+                                    stroke-width="1.75"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path></svg
+                            >
+                        </div>
+                        <div>
+                            <p
+                                class="text-niebla text-xs font-semibold tracking-wide uppercase mb-2"
+                            >
+                                Tiempo de respuesta
+                            </p>
+                            <p class="text-white font-medium">
+                                48 horas hábiles
+                            </p>
+                            <p class="text-niebla text-sm mt-1">
+                                Lunes a viernes, 9:00 — 18:00 hrs
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Área de operación -->
+                    <div
+                        data-reveal
+                        data-delay="3"
+                        class="bg-oceano rounded-2xl p-7 flex flex-col gap-4"
+                    >
+                        <div
+                            class="w-10 h-10 rounded-lg bg-cielo/15 flex items-center justify-center text-cielo"
+                        >
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                ><path
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    stroke="currentColor"
+                                    stroke-width="1.75"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path></svg
+                            >
+                        </div>
+                        <div>
+                            <p
+                                class="text-niebla text-xs font-semibold tracking-wide uppercase mb-2"
+                            >
+                                Área de operación
+                            </p>
+                            <p class="text-white font-medium">
+                                República Mexicana
+                            </p>
+                            <p class="text-niebla text-sm mt-1">
+                                Con base en Oaxaca, sector público y privado
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Canal ético -->
+                    <div
+                        data-reveal
+                        data-delay="4"
+                        class="border border-borde rounded-2xl p-7"
+                    >
+                        <p
+                            class="text-niebla text-xs font-semibold tracking-wide uppercase mb-3"
+                        >
+                            Canal Ético
+                        </p>
+                        <p class="text-[#7A9BB8] text-sm leading-[1.65] mb-4">
+                            Para denuncias de conductas indebidas o
+                            irregularidades en nuestra operación.
+                        </p>
+                        <a
+                            href="https://ethicsglobal.com/accounts/skywindmexico/forms/denuncia/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 text-sm text-niebla hover:text-white transition-colors font-medium"
+                        >
+                            Acceder al portal
+                            <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                fill="none"
+                                aria-hidden="true"
+                                ><path
+                                    d="M3 7h8M7 3l4 4-4 4"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path></svg
+                            >
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<script>
+    const form = document.getElementById(
+        "contact-form",
+    ) as HTMLFormElement | null;
+    const successMsg = document.getElementById("form-success");
+    form?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        form.classList.add("hidden");
+        successMsg?.classList.remove("hidden");
+    });
+</script>

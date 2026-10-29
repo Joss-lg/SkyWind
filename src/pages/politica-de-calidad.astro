@@ -1,0 +1,177 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const compromisos = [
+    {
+        titulo: "Satisfacción del cliente",
+        desc: "Comprender y cumplir los requisitos de nuestros clientes, buscando superar sus expectativas en cada proyecto.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Mejora continua",
+        desc: "Revisar y mejorar continuamente nuestros procesos, sistemas de gestión y resultados operativos.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Cumplimiento normativo",
+        desc: "Acatar los requisitos legales, reglamentarios y normativos aplicables a nuestras actividades y proyectos.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Competencia del personal",
+        desc: "Capacitar y desarrollar a nuestro equipo para asegurar la calidad en cada etapa de los proyectos.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 14l9-5-9-5-9 5 9 5zM12 14l6.16-3.422A12.083 12.083 0 0112 21a12.083 12.083 0 01-6.16-10.422L12 14z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Gestión de proveedores",
+        desc: "Seleccionar y evaluar proveedores que compartan nuestros estándares de calidad y responsabilidad.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Prevención de defectos",
+        desc: "Identificar y mitigar riesgos de calidad en las etapas tempranas de cada proyecto para prevenir no conformidades.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+];
+---
+
+<Layout
+    title="Política de Calidad — Skywind México"
+    description="Política de gestión de calidad de Skywind México para proyectos de energía renovable: compromisos, objetivos y estándares."
+>
+    <Nav />
+
+    <!-- Hero -->
+    <section class="bg-noche pt-40 pb-20 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_55%,rgba(12,191,130,0.12),transparent_60%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <p
+                class="hero-badge text-viento text-sm font-medium tracking-wide mb-4"
+            >
+                Legal y Normas
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-[-0.035em] leading-[1.05] text-white mb-4 max-w-3xl text-balance"
+            >
+                Política de Calidad
+            </h1>
+            <p
+                class="hero-body text-niebla text-base leading-[1.7] max-w-[52ch]"
+            >
+                En Skywind México la calidad no es un departamento, es la forma
+                en que trabajamos en cada proyecto de energía renovable que
+                ejecutamos.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Declaración -->
+        <section class="bg-alba py-20">
+            <div class="max-w-[860px] mx-auto px-6">
+                <div
+                    class="bg-white border border-[#D5E2F0] rounded-2xl p-10 mb-12"
+                    data-reveal
+                >
+                    <p
+                        class="text-viento text-xs font-semibold tracking-widest uppercase mb-5"
+                    >
+                        Declaración de política
+                    </p>
+                    <blockquote
+                        class="text-noche text-lg leading-[1.8] font-medium border-l-4 border-viento pl-6"
+                    >
+                        Skywind México se compromete a ejecutar proyectos de
+                        construcción y mantenimiento en el sector de energías
+                        renovables con los más altos estándares de calidad,
+                        cumpliendo los requisitos de nuestros clientes, la
+                        normativa aplicable y los objetivos de nuestro Sistema
+                        de Gestión de Calidad, promoviendo la mejora continua
+                        como base de nuestra cultura organizacional.
+                    </blockquote>
+                    <p class="mt-6 text-[#4A6480] text-sm">
+                        Esta política es comunicada, entendida y aplicada por
+                        todo el personal de Skywind México, y revisada
+                        periódicamente para garantizar su pertinencia y
+                        eficacia.
+                    </p>
+                </div>
+
+                <!-- Compromisos -->
+                <header class="mb-10" data-reveal>
+                    <p
+                        class="text-viento text-sm font-medium tracking-wide mb-2"
+                    >
+                        Nuestros compromisos
+                    </p>
+                    <h2
+                        class="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold tracking-[-0.03em] leading-[1.1] text-noche"
+                    >
+                        Cómo garantizamos la calidad
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#D5E2F0] border border-[#D5E2F0] rounded-xl overflow-hidden mb-14"
+                >
+                    {
+                        compromisos.map((c, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String((i % 2) + 1)}
+                                class="bg-white p-7 flex flex-col gap-3"
+                            >
+                                <span class="text-viento" set:html={c.icon} />
+                                <h3 class="text-noche font-bold text-sm">
+                                    {c.titulo}
+                                </h3>
+                                <p class="text-[#4A6480] text-sm leading-[1.65]">
+                                    {c.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <!-- Objetivos -->
+                <div data-reveal class="bg-noche rounded-2xl p-10">
+                    <p
+                        class="text-viento text-xs font-semibold tracking-widest uppercase mb-5"
+                    >
+                        Objetivos de calidad
+                    </p>
+                    <ul class="flex flex-col gap-4">
+                        {
+                            [
+                                "Lograr un índice de satisfacción del cliente igual o superior al 90% en cada proyecto.",
+                                "Reducir las no conformidades en obra mediante inspección y control preventivo.",
+                                "Completar los proyectos dentro del plazo y presupuesto acordado con el cliente.",
+                                "Mantener y mejorar la competencia técnica del personal mediante capacitación continua.",
+                                "Revisar anualmente el desempeño del Sistema de Gestión de Calidad.",
+                            ].map((obj) => (
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1.5 w-2 h-2 rounded-full bg-viento shrink-0" />
+                                    <span class="text-niebla text-sm leading-[1.65]">
+                                        {obj}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+                <p class="mt-10 text-xs text-[#4A6480]">
+                    Última revisión: octubre de 2024. Esta política aplica a
+                    todas las operaciones y personal de Skywind México.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

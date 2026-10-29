@@ -1,0 +1,246 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const principios = [
+    {
+        num: "01",
+        titulo: "Integridad",
+        desc: "Actuamos con honestidad y transparencia en todas nuestras relaciones: con clientes, proveedores, autoridades y entre el propio equipo. No toleramos el engaño, la falsificación de información ni la doble moral.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        num: "02",
+        titulo: "Respeto",
+        desc: "Tratamos a todas las personas con dignidad, sin discriminación por motivo de género, edad, origen étnico, religión, discapacidad, orientación sexual o cualquier otra condición personal.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        num: "03",
+        titulo: "Responsabilidad",
+        desc: "Asumimos las consecuencias de nuestras acciones y decisiones. Cumplimos los compromisos adquiridos con clientes, proveedores y el entorno donde operamos.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        num: "04",
+        titulo: "Lealtad",
+        desc: "Somos fieles a los valores de la empresa y a los intereses legítimos de nuestros clientes. Evitamos los conflictos de interés y actuamos siempre en beneficio del proyecto y la organización.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        num: "05",
+        titulo: "Profesionalismo",
+        desc: "Ejecutamos nuestro trabajo con rigor técnico, puntualidad y alto estándar de calidad. Nos mantenemos actualizados en las mejores prácticas del sector energético.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 14l9-5-9-5-9 5 9 5zM12 14l6.16-3.422A12.083 12.083 0 0112 21a12.083 12.083 0 01-6.16-10.422L12 14z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        num: "06",
+        titulo: "Confidencialidad",
+        desc: "Protegemos la información confidencial de clientes, proveedores y de la propia empresa. No divulgamos datos estratégicos, técnicos o comerciales sin autorización expresa.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.75"/></svg>`,
+    },
+];
+
+const conductas = [
+    {
+        cat: "Conflicto de interés",
+        desc: "Informar al área correspondiente cuando un interés personal pueda interferir con la toma de decisiones profesionales.",
+    },
+    {
+        cat: "Uso de activos de la empresa",
+        desc: "Los bienes, equipos, sistemas y tiempo de trabajo de Skywind se destinan exclusivamente a fines laborales legítimos.",
+    },
+    {
+        cat: "Acoso y hostigamiento",
+        desc: "Skywind no tolera ninguna forma de acoso laboral o sexual. Toda denuncia es investigada con confidencialidad y prontitud.",
+    },
+    {
+        cat: "Uso de información privilegiada",
+        desc: "Está prohibido utilizar información interna para beneficio propio o de terceros, antes de su divulgación pública.",
+    },
+    {
+        cat: "Redes sociales y comunicaciones",
+        desc: "El personal no puede publicar información confidencial de la empresa ni emitir declaraciones a medios en nombre de Skywind sin autorización.",
+    },
+    {
+        cat: "Dádivas y regalos",
+        desc: "No se aceptarán regalos, invitaciones o beneficios que puedan comprometer la imparcialidad en las decisiones de negocio.",
+    },
+];
+---
+
+<Layout
+    title="Código de Ética y Conducta — Skywind México"
+    description="Código de ética y conducta de Skywind México: principios, valores y normas de comportamiento para todo el personal."
+>
+    <Nav />
+
+    <!-- Hero -->
+    <section class="bg-noche pt-40 pb-20 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(12,191,130,0.12),transparent_55%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <p
+                class="hero-badge text-viento text-sm font-medium tracking-wide mb-4"
+            >
+                Ética y Valores
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-[-0.035em] leading-[1.05] text-white mb-4 max-w-3xl text-balance"
+            >
+                Código de Ética y Conducta
+            </h1>
+            <p
+                class="hero-body text-niebla text-base leading-[1.7] max-w-[52ch]"
+            >
+                Los valores de Skywind México no son aspiraciones, son
+                compromisos concretos que guían el comportamiento de cada
+                integrante del equipo en cada proyecto y relación de negocios.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Principios -->
+        <section class="bg-alba py-20">
+            <div class="max-w-container mx-auto px-6">
+                <header class="mb-12 max-w-2xl" data-reveal>
+                    <p
+                        class="text-viento text-sm font-medium tracking-wide mb-3"
+                    >
+                        Nuestros principios
+                    </p>
+                    <h2
+                        class="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold tracking-[-0.03em] leading-[1.1] text-noche"
+                    >
+                        La base de todo lo que hacemos
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#D5E2F0] border border-[#D5E2F0] rounded-xl overflow-hidden"
+                >
+                    {
+                        principios.map((p, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String((i % 3) + 1)}
+                                class="bg-white p-8 flex flex-col gap-4"
+                            >
+                                <div class="flex items-center gap-3">
+                                    <span
+                                        class="text-viento"
+                                        set:html={p.icon}
+                                    />
+                                    <span class="text-[#7A9CB8] font-mono text-sm">
+                                        {p.num}
+                                    </span>
+                                </div>
+                                <h3 class="text-noche font-extrabold text-base">
+                                    {p.titulo}
+                                </h3>
+                                <p class="text-[#4A6480] text-sm leading-[1.65]">
+                                    {p.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- Normas de conducta -->
+        <section class="bg-noche py-20">
+            <div class="max-w-container mx-auto px-6">
+                <header class="mb-12 max-w-2xl" data-reveal>
+                    <p
+                        class="text-viento text-sm font-medium tracking-wide mb-3"
+                    >
+                        Normas específicas
+                    </p>
+                    <h2
+                        class="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold tracking-[-0.03em] leading-[1.1] text-white"
+                    >
+                        Situaciones y cómo actuar
+                    </h2>
+                </header>
+                <div class="flex flex-col gap-4">
+                    {
+                        conductas.map((c, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String((i % 3) + 1)}
+                                class="bg-oceano border border-borde rounded-xl p-6 flex flex-col sm:flex-row gap-4"
+                            >
+                                <div class="sm:w-52 shrink-0">
+                                    <p class="text-white font-bold text-sm leading-snug">
+                                        {c.cat}
+                                    </p>
+                                </div>
+                                <p class="text-niebla text-sm leading-[1.7]">
+                                    {c.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- Denuncia -->
+        <section class="bg-alba py-20">
+            <div class="max-w-[860px] mx-auto px-6">
+                <div
+                    data-reveal
+                    class="bg-noche rounded-2xl p-10 flex flex-col sm:flex-row gap-8 items-start"
+                >
+                    <div class="flex-1">
+                        <p
+                            class="text-viento text-xs font-semibold tracking-widest uppercase mb-4"
+                        >
+                            ¿Ves algo incorrecto?
+                        </p>
+                        <h3 class="text-white font-extrabold text-2xl mb-3">
+                            Canal Ético
+                        </h3>
+                        <p class="text-niebla text-sm leading-[1.75]">
+                            Si observas conductas que contravengan este código,
+                            puedes reportarlas de forma confidencial y sin
+                            represalias. Todas las denuncias de buena fe son
+                            investigadas con seriedad.
+                        </p>
+                    </div>
+                    <div class="shrink-0 flex flex-col gap-3 w-full sm:w-auto">
+                        <a
+                            href="https://denuncias.skywindmexico.com/prueba_skywind/prueba/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="px-6 py-3 rounded-md bg-viento text-noche font-bold text-sm text-center hover:bg-[#09A870] transition-colors"
+                        >
+                            Acceder al Canal Ético
+                        </a>
+                        <a
+                            href="/contacto"
+                            class="px-6 py-3 rounded-md border border-borde text-niebla font-bold text-sm text-center hover:border-white hover:text-white transition-colors"
+                        >
+                            Contactar dirección
+                        </a>
+                    </div>
+                </div>
+
+                <p class="mt-10 text-xs text-[#4A6480]">
+                    El presente Código aplica a todos los directivos, empleados,
+                    contratistas y prestadores de servicios de Skywind México.
+                    Su incumplimiento puede dar lugar a medidas disciplinarias o
+                    rescisión de la relación laboral o contractual. Última
+                    revisión: octubre de 2024.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

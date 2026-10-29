@@ -1,0 +1,104 @@
+---
+const cards = [
+    {
+        href: "https://denuncias.skywindmexico.com/prueba_skywind/prueba/",
+        external: true,
+        title: "Portal de Denuncias",
+        desc: "Plataforma anónima disponible 24 h para reportar conductas contrarias a la legalidad en nuestros proyectos.",
+        icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2L2 8V14C2 20.4 7.4 26.4 14 28C20.6 26.4 26 20.4 26 14V8L14 2Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 14L12.5 17.5L19 11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        href: "/codigo-de-etica-y-conducta",
+        external: false,
+        title: "Código de Ética y Conducta",
+        desc: "Consulta el documento completo con nuestros principios y compromisos de integridad.",
+        icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="2" width="16" height="24" rx="2" stroke="currentColor" stroke-width="1.75"/><path d="M8 8H16M8 12H16M8 16H12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><circle cx="21" cy="21" r="4" stroke="currentColor" stroke-width="1.75"/></svg>`,
+    },
+];
+---
+
+<section
+    id="canal-etico"
+    class="relative bg-noche overflow-hidden py-[clamp(5rem,10vw,9rem)]"
+    aria-labelledby="ethics-heading"
+>
+    <div
+        class="relative z-10 max-w-container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start"
+    >
+        <!-- Texto -->
+        <div>
+            <p class="text-viento text-sm font-medium tracking-wide mb-5">
+                Canal Ético
+            </p>
+            <h2
+                id="ethics-heading"
+                class="text-[clamp(2rem,4.5vw,3.5rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-white mb-6 text-balance"
+            >
+                Integridad en<br />cada proyecto
+            </h2>
+            <p class="text-niebla leading-[1.7] max-w-[44ch] mb-8">
+                Disponemos de canales confidenciales e independientes para
+                comunicar cualquier consulta, irregularidad o incumplimiento de
+                nuestras políticas de integridad, seguridad y normativa
+                antisoborno.
+            </p>
+            <a
+                href="/codigo-de-etica-y-conducta"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-viento text-viento hover:bg-viento hover:text-noche font-semibold transition-colors"
+            >
+                Código de ética y conducta
+            </a>
+        </div>
+
+        <!-- Cards -->
+        <div
+            class="flex flex-col gap-px bg-borde border border-borde rounded-xl overflow-hidden self-center"
+        >
+            {
+                cards.map((c) => (
+                    <a
+                        href={c.href}
+                        target={c.external ? "_blank" : undefined}
+                        rel={c.external ? "noopener noreferrer" : undefined}
+                        class="group grid grid-cols-[auto_1fr_auto] gap-5 items-center p-7 bg-oceano hover:bg-[#122C48] transition-colors"
+                    >
+                        <span class="text-viento shrink-0" set:html={c.icon} />
+                        <div>
+                            <p class="text-white font-semibold mb-1.5 leading-snug">
+                                {c.title}
+                            </p>
+                            <p class="text-niebla text-sm leading-[1.55]">
+                                {c.desc}
+                            </p>
+                        </div>
+                        <span
+                            class="text-niebla opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 group-hover:text-viento transition-all shrink-0"
+                            aria-hidden="true"
+                        >
+                            <svg
+                                width="18"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                fill="none"
+                            >
+                                <path
+                                    d="M3 9H15M15 9L10 4M15 9L10 14"
+                                    stroke="currentColor"
+                                    stroke-width="1.75"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </span>
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+
+    <!-- Decorador § -->
+    <span
+        class="absolute right-[-0.05em] bottom-[-0.2em] text-[clamp(10rem,25vw,28rem)] font-extrabold leading-none text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.04)] pointer-events-none select-none z-0"
+        aria-hidden="true">§</span
+    >
+</section>

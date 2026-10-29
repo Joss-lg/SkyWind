@@ -1,0 +1,394 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+// Servicios reales extraídos de skywindmexico.com/eolica
+const mantenimiento = [
+    {
+        titulo: "Inspección de palas",
+        desc: "Revisión visual e instrumental de palas para detectar daños, grietas o desgaste.",
+    },
+    {
+        titulo: "Ensamble de aerogenerador",
+        desc: "Montaje de componentes estructurales: torre, góndola, rotor y sistema eléctrico.",
+    },
+    {
+        titulo: "Torque y tensión de atornilladas",
+        desc: "Verificación y ajuste de uniones atornilladas según las especificaciones del fabricante.",
+    },
+    {
+        titulo: "Sustitución de componentes",
+        desc: "Reemplazo de pequeños componentes mecánicos y eléctricos sin necesidad de grúa mayor.",
+    },
+    {
+        titulo: "Reparación de palas",
+        desc: "Reparación de daños superficiales y estructurales con materiales compuestos especializados.",
+    },
+    {
+        titulo: "Eliminación de óxido y pintura",
+        desc: "Tratamiento anticorrosivo y aplicación de pintura protectora en estructuras metálicas.",
+    },
+    {
+        titulo: "Sustitución de lubricantes",
+        desc: "Cambio de aceites y grasas en caja multiplicadora, cojinetes y sistema de orientación.",
+    },
+    {
+        titulo: "Limpieza general",
+        desc: "Limpieza de componentes internos y externos del aerogenerador para optimizar eficiencia.",
+    },
+];
+
+const serviciosEspecializados = [
+    {
+        titulo: "Correctivo mayor",
+        desc: "Intervención de gran escala para resolver fallas estructurales o mecánicas que requieren grúa y personal especializado.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.75"/></svg>`,
+    },
+    {
+        titulo: "Mantenimiento preventivo",
+        desc: "Programa periódico de revisión y ajuste de todos los sistemas para maximizar la vida útil y disponibilidad del aerogenerador.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Inspección boroscópica",
+        desc: "Inspección endoscópica interna de cajas de engranes y componentes de difícil acceso para detectar desgaste temprano.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zm-7-3v3m0 0v3m0-3h3m-3 0H9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Prueba de puesta a tierra",
+        desc: "Medición de resistencia del sistema de puesta a tierra para garantizar la protección contra descargas atmosféricas.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+];
+
+const construccion = [
+    {
+        n: "01",
+        titulo: "Ingeniería y planificación",
+        desc: "Revisión del proyecto ejecutivo, planificación de recursos y cronograma detallado de obra.",
+    },
+    {
+        n: "02",
+        titulo: "Obra civil",
+        desc: "Terracerías, caminos de acceso, plataformas de grúa y cimentaciones de aerogeneradores.",
+    },
+    {
+        n: "03",
+        titulo: "Obra electromecánica",
+        desc: "Tendido de cable MT/AT, instalación de transformadores y conexión a subestación.",
+    },
+    {
+        n: "04",
+        titulo: "Erección de aerogeneradores",
+        desc: "Montaje de torre, góndola, rotor y palas con grúa especializada y personal certificado.",
+    },
+    {
+        n: "05",
+        titulo: "Puesta en marcha",
+        desc: "Pruebas de funcionamiento, commissioning y entrega formal al cliente.",
+    },
+    {
+        n: "06",
+        titulo: "Mantenimiento continuo",
+        desc: "Contratos de mantenimiento preventivo y correctivo para maximizar la vida útil del parque.",
+    },
+];
+---
+
+<Layout
+    title="Energía Eólica — Skywind México"
+    description="Construcción y mantenimiento de parques eólicos en México: inspección de palas, montaje de aerogeneradores, correctivo mayor, preventivo y prueba de puesta a tierra."
+>
+    <Nav />
+
+    <!-- Hero -->
+    <section class="bg-noche pt-40 pb-28 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_40%,rgba(23,98,212,0.2),transparent_60%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <!-- Turbina decorativa animada -->
+        <div
+            class="absolute right-[4%] top-1/2 -translate-y-1/2 w-[480px] h-[480px] opacity-[0.06] hidden lg:block pointer-events-none"
+            aria-hidden="true"
+        >
+            <svg viewBox="0 0 200 200" fill="white" class="w-full h-full">
+                <circle cx="100" cy="100" r="8"></circle>
+                <g
+                    style="transform-origin:100px 100px"
+                    class="animate-spin-blade"
+                >
+                    <path
+                        d="M100 92L94 30Q93 8 100 8Q107 8 106 30Z"
+                        opacity=".95"></path>
+                </g>
+                <g
+                    style="transform-origin:100px 100px"
+                    class="animate-spin-blade2"
+                >
+                    <path
+                        d="M100 108L162 155Q178 167 172 176Q166 185 154 174Z"
+                        opacity=".75"></path>
+                </g>
+                <g
+                    style="transform-origin:100px 100px"
+                    class="animate-spin-blade3"
+                >
+                    <path
+                        d="M100 108L38 155Q22 167 28 176Q34 185 46 174Z"
+                        opacity=".55"></path>
+                </g>
+            </svg>
+        </div>
+
+        <div
+            class="max-w-container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        >
+            <div>
+                <a
+                    href="/servicio"
+                    class="hero-badge inline-flex items-center gap-1.5 text-niebla text-sm mb-6 hover:text-white transition-colors"
+                >
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
+                        ><path
+                            d="M13 8H3M7 4l-4 4 4 4"
+                            stroke="currentColor"
+                            stroke-width="1.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path></svg
+                    >
+                    Todos los servicios
+                </a>
+                <p
+                    class="hero-badge text-cielo text-sm font-medium tracking-wide mb-3"
+                >
+                    Servicio especializado
+                </p>
+                <h1
+                    class="hero-h1 text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold tracking-[-0.035em] leading-[1.03] text-white mb-5 text-balance"
+                >
+                    Energía Eólica
+                </h1>
+                <p
+                    class="hero-body text-niebla text-lg leading-[1.7] max-w-[48ch] mb-8"
+                >
+                    Construcción y mantenimiento de infraestructura para parques
+                    eólicos: desde las cimentaciones hasta la puesta en marcha,
+                    con equipos especializados y estándares internacionales de
+                    seguridad.
+                </p>
+                <div class="hero-actions">
+                    <a
+                        href="/contacto"
+                        class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-cielo text-white font-bold hover:bg-blue-700 transition-colors shadow-[0_0_20px_rgba(23,98,212,0.35)]"
+                    >
+                        Solicitar información
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div
+                data-reveal="right"
+                class="grid grid-cols-2 gap-px bg-borde border border-borde rounded-2xl overflow-hidden"
+            >
+                {
+                    [
+                        { v: "MT/AT", l: "Cableado de media y alta tensión" },
+                        {
+                            v: "24/7",
+                            l: "Servicio de mantenimiento disponible",
+                        },
+                        {
+                            v: "HSE",
+                            l: "Protocolos internacionales de seguridad",
+                        },
+                        { v: "100%", l: "Proyectos entregados en tiempo" },
+                    ].map((s) => (
+                        <div class="bg-oceano px-8 py-9 flex flex-col gap-2 group hover:bg-[#122C48] transition-colors">
+                            <span class="text-4xl font-extrabold tracking-tight text-cielo leading-none group-hover:scale-105 transition-transform duration-300 inline-block">
+                                {s.v}
+                            </span>
+                            <span class="text-xs text-niebla leading-snug">
+                                {s.l}
+                            </span>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Servicios de mantenimiento -->
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-alba">
+            <div class="max-w-container mx-auto px-6">
+                <header class="mb-14 max-w-2xl" data-reveal>
+                    <p
+                        class="text-cielo text-sm font-medium tracking-wide mb-4"
+                    >
+                        Mantenimiento
+                    </p>
+                    <h2
+                        class="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-noche"
+                    >
+                        Servicios de mantenimiento eólico
+                    </h2>
+                    <p class="text-[#4A6480] mt-4 leading-[1.7]">
+                        Realizamos mantenimiento preventivo y correctivo con
+                        personal técnico especializado, protocolos HSE y
+                        cumplimiento de las especificaciones originales del
+                        fabricante.
+                    </p>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#D5E2F0] border border-[#D5E2F0] rounded-xl overflow-hidden"
+                >
+                    {
+                        mantenimiento.map((m, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String((i % 4) + 1)}
+                                class="bg-white p-7 flex flex-col gap-3 group hover:bg-[#F4F9FF] transition-colors"
+                            >
+                                <div class="w-8 h-1 rounded-full bg-cielo transition-all duration-500 group-hover:w-16" />
+                                <h3 class="text-noche font-bold text-sm leading-snug">
+                                    {m.titulo}
+                                </h3>
+                                <p class="text-[#4A6480] text-xs leading-[1.65]">
+                                    {m.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios especializados -->
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-noche">
+            <div class="max-w-container mx-auto px-6">
+                <header class="mb-14" data-reveal>
+                    <p
+                        class="text-viento text-sm font-medium tracking-wide mb-4"
+                    >
+                        Servicios especializados
+                    </p>
+                    <h2
+                        class="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-white"
+                    >
+                        Capacidades técnicas avanzadas
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-borde border border-borde rounded-xl overflow-hidden"
+                >
+                    {
+                        serviciosEspecializados.map((s, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String(i + 1)}
+                                class="bg-oceano p-8 flex gap-5 group hover:bg-[#122C48] transition-colors"
+                            >
+                                <span
+                                    class="text-cielo shrink-0 mt-0.5 group-hover:text-viento transition-colors"
+                                    set:html={s.icon}
+                                />
+                                <div>
+                                    <h3 class="text-white font-bold mb-2">
+                                        {s.titulo}
+                                    </h3>
+                                    <p class="text-niebla text-sm leading-[1.65]">
+                                        {s.desc}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso de construcción -->
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-alba">
+            <div class="max-w-container mx-auto px-6">
+                <header class="mb-14 max-w-2xl" data-reveal>
+                    <p
+                        class="text-cielo text-sm font-medium tracking-wide mb-4"
+                    >
+                        Construcción
+                    </p>
+                    <h2
+                        class="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-noche"
+                    >
+                        Cómo ejecutamos un parque eólico
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    {
+                        construccion.map((e, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String((i % 3) + 1)}
+                                class="bg-white border border-[#D5E2F0] rounded-xl p-7 flex flex-col gap-4 hover:shadow-md hover:border-[#B8CEE8] transition-all duration-300"
+                            >
+                                <span class="text-[2.5rem] font-extrabold text-[#E0ECF8] leading-none tracking-tight">
+                                    {e.n}
+                                </span>
+                                <h3 class="text-noche font-bold leading-snug">
+                                    {e.titulo}
+                                </h3>
+                                <p class="text-[#4A6480] text-sm leading-[1.65]">
+                                    {e.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-cielo py-20" data-reveal>
+            <div
+                class="max-w-container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8"
+            >
+                <div>
+                    <h2
+                        class="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold tracking-tight text-white mb-2"
+                    >
+                        ¿Tienes un proyecto eólico?
+                    </h2>
+                    <p class="text-white/75">
+                        Cuéntanos los detalles y te asesoramos sin compromiso.
+                    </p>
+                </div>
+                <a
+                    href="/contacto"
+                    class="shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-white text-cielo font-bold hover:bg-alba transition-all hover:-translate-y-px"
+                >
+                    Iniciar conversación
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        aria-hidden="true"
+                        ><path
+                            d="M3 8h10M9 4l4 4-4 4"
+                            stroke="currentColor"
+                            stroke-width="1.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path></svg
+                    >
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

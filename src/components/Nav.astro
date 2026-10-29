@@ -1,0 +1,140 @@
+---
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const links = [
+  { label: 'Inicio',    href: '/' },
+  { label: 'Nosotros',  href: '/acerca-de-skywind' },
+  {
+    label: 'Servicios',
+    href: '/servicio',
+    sub: [
+      { label: 'Energía Eólica',        href: '/eolica' },
+      { label: 'Energía Solar',          href: '/energia-solar' },
+      { label: 'Energía Hidroeléctrica', href: '/energia-hidroelectrica' },
+      { label: 'Obra Civil',             href: '/obra-civil' },
+    ],
+  },
+  { label: 'Clientes',  href: '/clientes' },
+  { label: 'Noticias',  href: '/noticias' },
+];
+
+const isActive = (href: string) =>
+  href === '/' ? path === '/' : path === href || path.startsWith(href + '/');
+
+const serviceActive = links[2].sub!.some(s => isActive(s.href)) || isActive('/servicio');
+---
+
+<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+  <div class="max-w-container mx-auto flex items-center gap-4 h-17 px-6">
+
+    <!-- Logo -->
+    <a href="/" aria-label="Skywind — Inicio" class="flex items-center gap-2.5 shrink-0">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="3" fill="#0CBF82"/>
+        <path d="M16 13L13.5 4.5Q13 2 16 2Q19 2 18.5 4.5Z" fill="white" opacity=".95"/>
+        <path d="M16 19L23.5 26.5Q26 29 23 31Q20 33 19 30Z" fill="white" opacity=".7"/>
+        <path d="M16 19L6.5 23.5Q3.5 25 3 22Q2.5 19 5.5 19.5Z" fill="white" opacity=".5"/>
+      </svg>
+      <span class="text-white font-bold text-lg tracking-widest">SKYWIND</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-0.5 ml-auto" aria-label="Navegación principal">
+      {links.map(l => l.sub ? (
+        <!-- Servicios con dropdown -->
+        <div class="relative group/menu">
+          <button
+            class={`flex items-center gap-1 px-3 py-1.5 rounded text-sm font-medium transition-colors ${serviceActive ? 'text-white bg-white/10' : 'text-white/75 hover:text-white hover:bg-white/10'}`}
+            aria-haspopup="true"
+          >
+            {l.label}
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="opacity-60 group-hover/menu:rotate-180 transition-transform duration-200">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute top-full left-0 mt-1 w-52 bg-oceano border border-borde rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] opacity-0 invisible group-hover/menu:opacity-100 group-hover/menu:visible transition-all duration-150 overflow-hidden">
+            <a href="/servicio" class="block px-4 py-2.5 text-xs font-semibold text-niebla/70 hover:text-white uppercase tracking-widest border-b border-borde hover:bg-white/5 transition-colors">
+              Todos los servicios
+            </a>
+            {l.sub.map(s => (
+              <a
+                href={s.href}
+                class={`block px-4 py-3 text-sm transition-colors ${isActive(s.href) ? 'text-viento bg-white/5' : 'text-white/75 hover:text-white hover:bg-white/5'}`}
+              >
+                {s.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <a
+          href={l.href}
+          class={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${isActive(l.href) ? 'text-white bg-white/10' : 'text-white/75 hover:text-white hover:bg-white/10'}`}
+        >
+          {l.label}
+        </a>
+      ))}
+    </nav>
+
+    <a href="/contacto" class={`hidden md:inline-flex ml-3 px-5 py-2 rounded-md text-sm font-semibold transition-colors shrink-0 ${isActive('/contacto') ? 'bg-blue-700 text-white' : 'bg-cielo text-white hover:bg-blue-700'}`}>
+      Contacto
+    </a>
+
+    <!-- Mobile toggle -->
+    <button id="nav-toggle" class="md:hidden ml-auto p-2 flex flex-col gap-1.25 group" aria-expanded="false" aria-label="Abrir menú">
+      <span class="block w-5.5 h-0.5 bg-white rounded-sm transition-transform duration-200 group-[.open]:translate-y-[3.5px] group-[.open]:rotate-45 origin-center"></span>
+      <span class="block w-5.5 h-0.5 bg-white rounded-sm transition-transform duration-200 group-[.open]:translate-y-[-3.5px] group-[.open]:-rotate-45 origin-center"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="nav-mobile" class="hidden md:hidden bg-noche border-t border-borde px-6 pb-5 pt-3">
+    <nav class="flex flex-col gap-0.5">
+      {links.map(l => l.sub ? (
+        <>
+          <p class="px-3 pt-3 pb-1 text-[0.6875rem] font-semibold tracking-widest text-white/30 uppercase">Servicios</p>
+          <a href="/servicio" class={`block px-3 py-2 rounded text-sm transition-colors font-medium ${isActive('/servicio') ? 'text-viento bg-white/5' : 'text-white/60 hover:text-white hover:bg-white/7'}`}>
+            Ver todos los servicios
+          </a>
+          {l.sub.map(s => (
+            <a href={s.href} class={`block px-3 py-2 rounded text-sm transition-colors ${isActive(s.href) ? 'text-viento bg-white/5' : 'text-white/70 hover:text-white hover:bg-white/7'}`}>
+              {s.label}
+            </a>
+          ))}
+        </>
+      ) : (
+        <a href={l.href} class={`block px-3 py-2.5 rounded font-medium transition-colors ${isActive(l.href) ? 'text-white bg-white/10' : 'text-white/80 hover:text-white hover:bg-white/7'}`}>
+          {l.label}
+        </a>
+      ))}
+      <a href="/contacto" class={`mt-3 text-center px-5 py-2.5 rounded-md font-semibold transition-colors ${isActive('/contacto') ? 'bg-blue-700 text-white' : 'bg-cielo text-white hover:bg-blue-700'}`}>
+        Contacto
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const nav    = document.getElementById('nav')!;
+  const toggle = document.getElementById('nav-toggle')!;
+  const mobile = document.getElementById('nav-mobile')!;
+
+  const onScroll = () => nav.classList.toggle(
+    'bg-noche/97 backdrop-blur-md shadow-[0_1px_0_#1E3A5C]',
+    window.scrollY > 60
+  );
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  toggle.addEventListener('click', () => {
+    const open = toggle.classList.toggle('open');
+    mobile.classList.toggle('hidden', !open);
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    mobile.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+</script>

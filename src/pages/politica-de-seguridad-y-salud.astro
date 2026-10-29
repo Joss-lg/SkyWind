@@ -1,0 +1,174 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const pilares = [
+    {
+        titulo: "Cero accidentes",
+        desc: "Trabajar hacia la eliminación de lesiones y enfermedades laborales mediante la identificación y control de riesgos en cada frente de trabajo.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Participación del personal",
+        desc: "Involucrar a todos los trabajadores en la identificación de peligros, reporte de condiciones inseguras y mejora de los procedimientos de seguridad.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Cumplimiento legal",
+        desc: "Acatar la Ley Federal del Trabajo, el Reglamento Federal de Seguridad y Salud en el Trabajo, las NOM aplicables y los compromisos voluntarios suscritos.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Equipos de protección",
+        desc: "Proveer al personal los equipos de protección personal adecuados a los riesgos de cada actividad y asegurar su correcto uso.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Capacitación y simulacros",
+        desc: "Formar al personal en materia de seguridad antes del inicio de cada proyecto y realizar simulacros periódicos de respuesta a emergencias.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 14l9-5-9-5-9 5 9 5zM12 14l6.16-3.422A12.083 12.083 0 0112 21a12.083 12.083 0 01-6.16-10.422L12 14z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Investigación de incidentes",
+        desc: "Investigar todo incidente o accidente para identificar causas raíz, implementar acciones correctivas y prevenir recurrencia.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+];
+---
+
+<Layout
+    title="Política de Seguridad y Salud — Skywind México"
+    description="Política de seguridad, salud y medio ambiente (HSE) de Skywind México para proyectos de energía renovable."
+>
+    <Nav />
+
+    <!-- Hero -->
+    <section class="bg-noche pt-40 pb-20 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_65%_45%,rgba(23,98,212,0.15),transparent_60%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <p
+                class="hero-badge text-cielo text-sm font-medium tracking-wide mb-4"
+            >
+                HSE
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-[-0.035em] leading-[1.05] text-white mb-4 max-w-3xl text-balance"
+            >
+                Política de Seguridad y Salud en el Trabajo
+            </h1>
+            <p
+                class="hero-body text-niebla text-base leading-[1.7] max-w-[52ch]"
+            >
+                La seguridad de nuestro personal es la prioridad absoluta en
+                cada proyecto. Ninguna tarea justifica poner en riesgo la
+                integridad de las personas.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section class="bg-alba py-20">
+            <div class="max-w-[860px] mx-auto px-6">
+                <!-- Declaración -->
+                <div
+                    class="bg-white border border-[#D5E2F0] rounded-2xl p-10 mb-12"
+                    data-reveal
+                >
+                    <p
+                        class="text-cielo text-xs font-semibold tracking-widest uppercase mb-5"
+                    >
+                        Declaración
+                    </p>
+                    <blockquote
+                        class="text-noche text-lg leading-[1.8] font-medium border-l-4 border-cielo pl-6"
+                    >
+                        Skywind México se compromete a proporcionar lugares de
+                        trabajo seguros y saludables, previniendo lesiones,
+                        enfermedades laborales y deterioro de la salud del
+                        personal. La dirección lidera con el ejemplo y asigna
+                        los recursos necesarios para la gestión efectiva de la
+                        seguridad y salud en todas las operaciones de la
+                        empresa.
+                    </blockquote>
+                </div>
+
+                <!-- Pilares -->
+                <header class="mb-10" data-reveal>
+                    <p
+                        class="text-cielo text-sm font-medium tracking-wide mb-2"
+                    >
+                        Nuestros pilares HSE
+                    </p>
+                    <h2
+                        class="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold tracking-[-0.03em] leading-[1.1] text-noche"
+                    >
+                        Cómo gestionamos la seguridad
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#D5E2F0] border border-[#D5E2F0] rounded-xl overflow-hidden mb-14"
+                >
+                    {
+                        pilares.map((p, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String((i % 2) + 1)}
+                                class="bg-white p-7 flex flex-col gap-3"
+                            >
+                                <span class="text-cielo" set:html={p.icon} />
+                                <h3 class="text-noche font-bold text-sm">
+                                    {p.titulo}
+                                </h3>
+                                <p class="text-[#4A6480] text-sm leading-[1.65]">
+                                    {p.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <!-- Marco normativo -->
+                <div data-reveal class="bg-noche rounded-2xl p-10">
+                    <p
+                        class="text-cielo text-xs font-semibold tracking-widest uppercase mb-5"
+                    >
+                        Marco normativo aplicable
+                    </p>
+                    <ul class="flex flex-col gap-3">
+                        {
+                            [
+                                "Ley Federal del Trabajo — Título Noveno: Riesgos de Trabajo.",
+                                "Reglamento Federal de Seguridad y Salud en el Trabajo (DOF 13-Nov-2014).",
+                                "NOM-001-STPS: Edificios, locales e instalaciones.",
+                                "NOM-004-STPS: Sistemas y dispositivos de seguridad para maquinaria y equipo.",
+                                "NOM-017-STPS: Equipo de protección personal.",
+                                "NOM-030-STPS: Servicios preventivos de seguridad y salud en el trabajo.",
+                                "NOM-033-STPS: Trabajos en espacios confinados.",
+                            ].map((n) => (
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1.5 w-2 h-2 rounded-full bg-cielo shrink-0" />
+                                    <span class="text-niebla text-sm leading-[1.65]">
+                                        {n}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+                <p class="mt-10 text-xs text-[#4A6480]">
+                    Última revisión: octubre de 2024. Aplica a todo el personal
+                    propio, contratistas y visitantes en obras de Skywind
+                    México.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

@@ -1,0 +1,204 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav    from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const servicios = [
+  {
+    slug: '/eolica',
+    color: '#1762D4',
+    titulo: 'Energía Eólica',
+    subtitulo: 'Construcción y mantenimiento de parques eólicos',
+    desc: 'Ejecutamos proyectos de infraestructura para parques eólicos: cimentaciones, montaje de torres, tendido de cables de media y alta tensión, subestaciones eléctricas y mantenimiento preventivo y correctivo de aerogeneradores.',
+    actividades: [
+      'Cimentaciones para torres eólicas',
+      'Montaje y erección de aerogeneradores',
+      'Obra electromecánica (cableado MT/AT)',
+      'Subestaciones eléctricas',
+      'Mantenimiento preventivo y correctivo',
+      'Inspección y diagnóstico técnico',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" class="w-10 h-10"><circle cx="24" cy="24" r="4" fill="currentColor"/><path d="M24 20 L21 6 Q20.5 2 24 2 Q27.5 2 27 6Z" fill="currentColor" opacity=".9"/><path d="M24 28 L37 41 Q39.5 44 36.5 46 Q33.5 48 32.5 44Z" fill="currentColor" opacity=".65"/><path d="M24 28 L9 33 Q5.5 34.5 5 31.5 Q4.5 28.5 8 29Z" fill="currentColor" opacity=".4"/></svg>`,
+  },
+  {
+    slug: '/energia-solar',
+    color: '#0CBF82',
+    titulo: 'Energía Solar',
+    subtitulo: 'Instalación de sistemas fotovoltaicos',
+    desc: 'Desarrollamos la obra civil y electromecánica de plantas fotovoltaicas: preparación de terreno, instalación de estructuras de montaje, paneles solares, inversores, transformadores y sistemas de monitoreo.',
+    actividades: [
+      'Preparación y nivelación de terreno',
+      'Estructuras de montaje fijas e inclinadas',
+      'Instalación de paneles fotovoltaicos',
+      'Inversores y sistemas de conversión',
+      'Transformadores y conexión a red',
+      'Sistemas SCADA y monitoreo remoto',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" class="w-10 h-10"><circle cx="24" cy="24" r="7" fill="currentColor"/><path d="M24 4v6M24 38v6M44 24h-6M10 24H4M37.9 10.1l-4.24 4.24M14.34 33.66l-4.24 4.24M37.9 37.9l-4.24-4.24M14.34 14.34l-4.24-4.24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+  },
+  {
+    slug: '/energia-hidroelectrica',
+    color: '#1762D4',
+    titulo: 'Energía Hidroeléctrica',
+    subtitulo: 'Obras hidráulicas y generación',
+    desc: 'Construimos y rehabilitamos la infraestructura de centrales hidroeléctricas: presas, canales de conducción, casas de máquinas, turbinas, generadores y sistemas de control para la generación de energía limpia a partir del agua.',
+    actividades: [
+      'Obras civiles: presas y bordos',
+      'Canales de conducción y tuberías',
+      'Casas de máquinas y estructuras',
+      'Instalación de turbinas y generadores',
+      'Sistemas eléctricos de control',
+      'Mantenimiento de equipos hidráulicos',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" class="w-10 h-10"><path d="M8 36 C8 36 14 28 24 28 C34 28 40 36 40 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M4 42 C4 42 12 30 24 30 C36 30 44 42 44 42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="2.5"/><path d="M24 10V6M24 30v-4M16 18h-4M36 18h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  },
+  {
+    slug: '/obra-civil',
+    color: '#0CBF82',
+    titulo: 'Obra Civil',
+    subtitulo: 'Infraestructura de soporte para proyectos renovables',
+    desc: 'Ejecutamos la obra civil integral que respalda los proyectos de energía renovable: caminos de acceso, plataformas, edificaciones auxiliares, redes de drenaje y toda la infraestructura de soporte que exige cada proyecto.',
+    actividades: [
+      'Caminos de acceso y terracerías',
+      'Plataformas de montaje',
+      'Edificaciones auxiliares y bodegas',
+      'Redes de drenaje pluvial',
+      'Cercados perimetrales y señalización',
+      'Obras de contención y taludes',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" class="w-10 h-10"><rect x="4" y="28" width="40" height="6" rx="1" fill="currentColor" opacity=".3"/><path d="M12 28 L16 14 L32 14 L36 28" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M20 28V18h8v10" stroke="currentColor" stroke-width="2"/><path d="M4 34h40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+  },
+];
+---
+
+<Layout title="Servicios — Skywind México" description="Construcción y mantenimiento de infraestructura para energía eólica, solar, hidroeléctrica y obra civil en México.">
+  <Nav />
+
+  <!-- Hero -->
+  <section class="bg-noche pt-40 pb-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_60%,rgba(12,191,130,0.1),transparent_60%)]" aria-hidden="true"></div>
+    <div class="max-w-container mx-auto px-6 relative z-10">
+      <p class="hero-badge text-viento text-sm font-medium tracking-wide mb-4">Nuestros Servicios</p>
+      <h1 class="hero-h1 text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.035em] leading-[1.03] text-white mb-6 text-balance max-w-3xl">
+        Especialistas en energía renovable
+      </h1>
+      <p class="hero-body text-niebla text-lg leading-[1.7] max-w-[50ch]">
+        Cuatro disciplinas técnicas, un solo objetivo: construir la infraestructura que
+        hace posible la transición energética de México.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Servicios detalle -->
+    <section class="py-[clamp(5rem,10vw,9rem)] bg-alba">
+      <div class="max-w-container mx-auto px-6 flex flex-col gap-[clamp(4rem,8vw,7rem)]">
+        {servicios.map((s, i) => (
+          <article data-reveal class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+            <!-- Texto -->
+            <div>
+              <div class="inline-flex items-center justify-center w-16 h-16 rounded-xl mb-6" style={`background: ${s.color}20; color: ${s.color}`}
+                set:html={s.icon}
+              />
+              <p class="text-niebla text-sm font-medium mb-2">{s.subtitulo}</p>
+              <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold tracking-tight text-noche mb-4 leading-[1.1]">
+                {s.titulo}
+              </h2>
+              <p class="text-[#4A6480] leading-[1.75] mb-7 text-lg">{s.desc}</p>
+              <a href={s.slug} class="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-md border transition-colors"
+                style={`color: ${s.color}; border-color: ${s.color}40`}
+                onmouseenter={`this.style.background='${s.color}10'`}
+                onmouseleave="this.style.background=''"
+              >
+                Ver detalles del servicio
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+
+            <!-- Actividades -->
+            <div class="bg-white border border-[#D5E2F0] rounded-2xl p-8">
+              <p class="text-[0.6875rem] font-semibold tracking-[0.07em] text-niebla uppercase mb-5">Actividades principales</p>
+              <ul class="flex flex-col gap-3">
+                {s.actividades.map(a => (
+                  <li class="flex items-start gap-3">
+                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={`background: ${s.color}`}></span>
+                    <span class="text-[#2C4A6A] leading-snug">{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Por qué Skywind -->
+    <section class="py-[clamp(5rem,10vw,9rem)] bg-noche">
+      <div class="max-w-container mx-auto px-6">
+        <header class="mb-14 max-w-2xl">
+          <p class="text-viento text-sm font-medium tracking-wide mb-4">¿Por qué elegirnos?</p>
+          <h2 class="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-white">
+            Capacidades que nos distinguen
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-borde border border-borde rounded-xl overflow-hidden">
+          {[
+            {
+              titulo: 'Experiencia técnica',
+              desc: 'Equipo con amplia trayectoria en proyectos de energía renovable en México.',
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-4a1 1 0 011-1h2a1 1 0 011 1v4m-4 0h4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            },
+            {
+              titulo: 'Gestión integral',
+              desc: 'Nos hacemos cargo del proyecto desde la ingeniería hasta la puesta en marcha.',
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            },
+            {
+              titulo: 'Seguridad primero',
+              desc: 'Protocolos HSE rigurosos en cada obra, sin excepciones.',
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            },
+            {
+              titulo: 'Sector público y privado',
+              desc: 'Experiencia con organismos de gobierno e industria privada.',
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            },
+            {
+              titulo: 'Responsabilidad ambiental',
+              desc: 'Minimizamos el impacto ambiental en cada intervención.',
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            },
+            {
+              titulo: 'Calidad certificada',
+              desc: 'Procesos bajo sistemas de gestión de calidad reconocidos.',
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            },
+          ].map(c => (
+            <div class="bg-oceano p-8 flex flex-col gap-4">
+              <span class="text-viento" set:html={c.icon} />
+              <h3 class="text-white font-bold leading-snug">{c.titulo}</h3>
+              <p class="text-niebla text-sm leading-[1.65]">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-cielo py-20">
+      <div class="max-w-container mx-auto px-6 text-center">
+        <h2 class="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold tracking-tight text-white mb-4">
+          Cuéntanos tu proyecto
+        </h2>
+        <p class="text-white/75 text-lg mb-8 max-w-[42ch] mx-auto">
+          Analizamos tu requerimiento y te proponemos la solución más adecuada.
+        </p>
+        <a href="/contacto" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-white text-cielo font-bold hover:bg-alba transition-colors">
+          Solicitar información
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

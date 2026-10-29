@@ -1,0 +1,180 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const servicios = [
+    {
+        titulo: "Obras de captación",
+        desc: "Construcción y rehabilitación de presas, bordos, azudes y estructuras de captación de agua.",
+    },
+    {
+        titulo: "Conducción",
+        desc: "Canales de conducción, acueductos, túneles y tuberías de presión para transporte del recurso hídrico.",
+    },
+    {
+        titulo: "Casa de máquinas",
+        desc: "Obras civiles de la casa de máquinas: estructuras, fosos, cárcamos y edificaciones.",
+    },
+    {
+        titulo: "Equipamiento",
+        desc: "Instalación y puesta en marcha de turbinas, generadores, compuertas y sistemas de control.",
+    },
+    {
+        titulo: "Obras de descarga",
+        desc: "Canales de descarga, disipadores de energía y obras de restitución al cauce natural.",
+    },
+    {
+        titulo: "Mantenimiento",
+        desc: "Inspección periódica, mantenimiento preventivo y correctivo de todos los componentes.",
+    },
+];
+---
+
+<Layout
+    title="Energía Hidroeléctrica — Skywind México"
+    description="Construcción y rehabilitación de centrales hidroeléctricas en México: obras civiles, instalación de equipos y mantenimiento."
+>
+    <Nav />
+
+    <section class="bg-noche pt-40 pb-28 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_65%_45%,rgba(23,98,212,0.2),transparent_60%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <a
+                href="/servicio"
+                class="inline-flex items-center gap-1.5 text-niebla text-sm mb-6 hover:text-white transition-colors"
+            >
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
+                    ><path
+                        d="M13 8H3M7 4l-4 4 4 4"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                >
+                Todos los servicios
+            </a>
+            <p
+                class="hero-badge text-cielo text-sm font-medium tracking-wide mb-3"
+            >
+                Servicio especializado
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold tracking-[-0.035em] leading-[1.03] text-white mb-5 max-w-3xl text-balance"
+            >
+                Energía Hidroeléctrica
+            </h1>
+            <p
+                class="hero-body text-niebla text-lg leading-[1.7] max-w-[50ch] mb-8"
+            >
+                Construimos y rehabilitamos la infraestructura de centrales
+                hidroeléctricas en México: obras civiles, equipamiento
+                electromecánico y mantenimiento para generación limpia a partir
+                del recurso hídrico.
+            </p>
+            <a
+                href="/contacto"
+                class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-cielo text-white font-bold hover:bg-blue-700 transition-colors"
+            >
+                Solicitar información
+            </a>
+        </div>
+    </section>
+
+    <main>
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-alba">
+            <div class="max-w-container mx-auto px-6">
+                <header class="mb-14 max-w-2xl" data-reveal>
+                    <p
+                        class="text-cielo text-sm font-medium tracking-wide mb-4"
+                    >
+                        Qué hacemos
+                    </p>
+                    <h2
+                        class="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-noche"
+                    >
+                        Cobertura integral del proyecto
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    {
+                        servicios.map((s, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String((i % 3) + 1)}
+                                class="bg-white border border-[#D5E2F0] rounded-xl p-7 flex flex-col gap-3"
+                            >
+                                <div class="w-10 h-10 rounded-lg bg-cielo/10 flex items-center justify-center">
+                                    <svg
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 48 48"
+                                        fill="none"
+                                        class="text-cielo"
+                                    >
+                                        <path
+                                            d="M8 36 C8 36 14 28 24 28 C34 28 40 36 40 36"
+                                            stroke="currentColor"
+                                            stroke-width="2.5"
+                                            stroke-linecap="round"
+                                        />
+                                        <path
+                                            d="M4 42 C4 42 12 30 24 30 C36 30 44 42 44 42"
+                                            stroke="currentColor"
+                                            stroke-width="2.5"
+                                            stroke-linecap="round"
+                                        />
+                                        <circle
+                                            cx="24"
+                                            cy="18"
+                                            r="8"
+                                            stroke="currentColor"
+                                            stroke-width="2.5"
+                                        />
+                                    </svg>
+                                </div>
+                                <h3 class="text-noche font-bold leading-snug">
+                                    {s.titulo}
+                                </h3>
+                                <p class="text-[#4A6480] text-sm leading-[1.65]">
+                                    {s.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-cielo py-20">
+            <div
+                class="max-w-container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8"
+            >
+                <div>
+                    <h2
+                        class="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold tracking-tight text-white mb-2"
+                    >
+                        ¿Tienes un proyecto hidroeléctrico?
+                    </h2>
+                    <p class="text-white/75">
+                        Cuéntanos los detalles y te asesoramos sin compromiso.
+                    </p>
+                </div>
+                <a
+                    href="/contacto"
+                    class="shrink-0 px-7 py-3.5 rounded-md bg-white text-cielo font-bold hover:bg-alba transition-colors"
+                >
+                    Iniciar conversación
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

@@ -1,0 +1,201 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const alcances = [
+    {
+        titulo: "Obra civil",
+        items: [
+            "Movimientos de tierra y nivelación",
+            "Compactación de terreno",
+            "Drenaje pluvial",
+            "Caminos de acceso internos",
+        ],
+    },
+    {
+        titulo: "Estructura de montaje",
+        items: [
+            "Hincado de postes y pilotes",
+            "Ensamble de estructuras fijas o seguridores",
+            "Montaje de paneles fotovoltaicos",
+            "Cableado DC en campo",
+        ],
+    },
+    {
+        titulo: "Electromecánica",
+        items: [
+            "Inversores y equipos de conversión",
+            "Transformadores de potencia",
+            "Cableado AC y conexión a red",
+            "Sistema de puesta a tierra",
+        ],
+    },
+    {
+        titulo: "Control y monitoreo",
+        items: [
+            "SCADA y telemetría",
+            "Medidores de energía",
+            "Sistema de comunicaciones",
+            "Puesta en marcha y pruebas",
+        ],
+    },
+];
+---
+
+<Layout
+    title="Energía Solar — Skywind México"
+    description="Instalación de plantas fotovoltaicas en México: obra civil, estructuras de montaje, electromecánica y puesta en marcha."
+>
+    <Nav />
+
+    <section class="bg-noche pt-40 pb-28 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(12,191,130,0.15),transparent_60%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div
+            class="max-w-container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        >
+            <div>
+                <a
+                    href="/servicio"
+                    class="inline-flex items-center gap-1.5 text-niebla text-sm mb-6 hover:text-white transition-colors"
+                >
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
+                        ><path
+                            d="M13 8H3M7 4l-4 4 4 4"
+                            stroke="currentColor"
+                            stroke-width="1.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path></svg
+                    >
+                    Todos los servicios
+                </a>
+                <p
+                    class="hero-badge text-viento text-sm font-medium tracking-wide mb-3"
+                >
+                    Servicio especializado
+                </p>
+                <h1
+                    class="hero-h1 text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold tracking-[-0.035em] leading-[1.03] text-white mb-5 text-balance"
+                >
+                    Energía Solar
+                </h1>
+                <p
+                    class="hero-body text-niebla text-lg leading-[1.7] max-w-[48ch] mb-8"
+                >
+                    Ejecutamos la obra civil y electromecánica de plantas
+                    fotovoltaicas de gran escala, garantizando calidad en cada
+                    etapa: desde la preparación del terreno hasta la conexión a
+                    la red eléctrica nacional.
+                </p>
+                <a
+                    href="/contacto"
+                    class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-viento text-noche font-bold hover:bg-[#09A870] transition-colors"
+                >
+                    Solicitar información
+                </a>
+            </div>
+
+            <div
+                data-reveal="right"
+                class="grid grid-cols-2 gap-px bg-borde border border-borde rounded-2xl overflow-hidden"
+            >
+                {
+                    [
+                        { v: "FV", l: "Sistemas fotovoltaicos de gran escala" },
+                        {
+                            v: "DC/AC",
+                            l: "Obra eléctrica en corriente directa y alterna",
+                        },
+                        { v: "MW", l: "Proyectos de mediana y gran capacidad" },
+                        {
+                            v: "SCADA",
+                            l: "Integración de sistemas de monitoreo",
+                        },
+                    ].map((s) => (
+                        <div class="bg-oceano px-8 py-9 flex flex-col gap-2">
+                            <span class="text-4xl font-extrabold tracking-tight text-viento leading-none">
+                                {s.v}
+                            </span>
+                            <span class="text-xs text-niebla leading-snug">
+                                {s.l}
+                            </span>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-alba">
+            <div class="max-w-container mx-auto px-6">
+                <header class="mb-14 max-w-2xl" data-reveal>
+                    <p
+                        class="text-viento text-sm font-medium tracking-wide mb-4"
+                    >
+                        Alcance de trabajo
+                    </p>
+                    <h2
+                        class="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-noche"
+                    >
+                        Qué incluye nuestro servicio
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#D5E2F0] border border-[#D5E2F0] rounded-xl overflow-hidden"
+                >
+                    {
+                        alcances.map((a, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String(i + 1)}
+                                class="bg-white p-8 flex flex-col gap-4"
+                            >
+                                <h3 class="text-noche font-extrabold leading-snug border-b border-[#D5E2F0] pb-4">
+                                    {a.titulo}
+                                </h3>
+                                <ul class="flex flex-col gap-2.5">
+                                    {a.items.map((i) => (
+                                        <li class="flex items-start gap-2 text-sm text-[#4A6480] leading-snug">
+                                            <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-viento shrink-0" />
+                                            {i}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-viento py-20">
+            <div
+                class="max-w-container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8"
+            >
+                <div>
+                    <h2
+                        class="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold tracking-tight text-noche mb-2"
+                    >
+                        ¿Tienes un proyecto solar?
+                    </h2>
+                    <p class="text-noche/65">
+                        Cuéntanos los detalles y te asesoramos sin compromiso.
+                    </p>
+                </div>
+                <a
+                    href="/contacto"
+                    class="shrink-0 px-7 py-3.5 rounded-md bg-noche text-white font-bold hover:bg-oceano transition-colors"
+                >
+                    Iniciar conversación
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

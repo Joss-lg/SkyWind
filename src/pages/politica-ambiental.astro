@@ -1,0 +1,175 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const compromisos = [
+    {
+        titulo: "Prevención de la contaminación",
+        desc: "Identificar y controlar los aspectos ambientales de nuestras actividades para prevenir la contaminación del suelo, agua y aire.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>`,
+    },
+    {
+        titulo: "Uso eficiente de recursos",
+        desc: "Reducir el consumo de agua, energía y materiales en nuestras operaciones y fomentar la reutilización y el reciclaje de residuos.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 7l-5-5-5 5M12 2v13M7 17l5 5 5-5M12 22V9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Manejo de residuos",
+        desc: "Clasificar, almacenar y disponer correctamente los residuos sólidos, peligrosos y de manejo especial generados en obra, conforme a la normativa aplicable.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Protección a la biodiversidad",
+        desc: "Minimizar el impacto de nuestras obras sobre los ecosistemas locales, considerando las etapas de construcción, operación y cierre de proyectos.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22V12M12 12C12 12 7 9 7 4a5 5 0 0110 0c0 5-5 8-5 8zM8 20c0 0 1-4 4-5M16 20c0 0-1-4-4-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Cumplimiento ambiental",
+        desc: "Cumplir con la legislación ambiental federal, estatal y municipal vigente, así como las condicionantes de las autorizaciones y permisos ambientales de cada proyecto.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Comunicación y capacitación",
+        desc: "Sensibilizar y capacitar al personal en buenas prácticas ambientales y comunicar el desempeño ambiental de la empresa a las partes interesadas.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+];
+---
+
+<Layout
+    title="Política Ambiental — Skywind México"
+    description="Política de gestión ambiental de Skywind México: compromisos con la protección del medio ambiente en proyectos de energía renovable."
+>
+    <Nav />
+
+    <!-- Hero -->
+    <section class="bg-noche pt-40 pb-20 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_35%_50%,rgba(12,191,130,0.15),transparent_60%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <p
+                class="hero-badge text-viento text-sm font-medium tracking-wide mb-4"
+            >
+                Medio Ambiente
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-[-0.035em] leading-[1.05] text-white mb-4 max-w-3xl text-balance"
+            >
+                Política Ambiental
+            </h1>
+            <p
+                class="hero-body text-niebla text-base leading-[1.7] max-w-[52ch]"
+            >
+                Construimos proyectos de energía limpia sin comprometer el
+                entorno natural donde operamos. El cuidado ambiental es parte
+                integral de nuestra forma de trabajar.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section class="bg-alba py-20">
+            <div class="max-w-[860px] mx-auto px-6">
+                <!-- Declaración -->
+                <div
+                    class="bg-white border border-[#D5E2F0] rounded-2xl p-10 mb-12"
+                    data-reveal
+                >
+                    <p
+                        class="text-viento text-xs font-semibold tracking-widest uppercase mb-5"
+                    >
+                        Declaración
+                    </p>
+                    <blockquote
+                        class="text-noche text-lg leading-[1.8] font-medium border-l-4 border-viento pl-6"
+                    >
+                        Skywind México reconoce su responsabilidad con el medio
+                        ambiente y se compromete a integrar criterios de
+                        sostenibilidad en la planificación y ejecución de todos
+                        sus proyectos. Promovemos la protección del entorno
+                        natural, el uso eficiente de los recursos y la mejora
+                        continua de nuestro desempeño ambiental.
+                    </blockquote>
+                    <p class="mt-6 text-[#4A6480] text-sm">
+                        Esta política es congruente con nuestra misión de
+                        impulsar las energías renovables como solución al cambio
+                        climático y es vinculante para todo el personal y
+                        contratistas.
+                    </p>
+                </div>
+
+                <!-- Compromisos -->
+                <header class="mb-10" data-reveal>
+                    <p
+                        class="text-viento text-sm font-medium tracking-wide mb-2"
+                    >
+                        Nuestros compromisos
+                    </p>
+                    <h2
+                        class="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold tracking-[-0.03em] leading-[1.1] text-noche"
+                    >
+                        Cómo protegemos el medio ambiente
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#D5E2F0] border border-[#D5E2F0] rounded-xl overflow-hidden mb-14"
+                >
+                    {
+                        compromisos.map((c, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String((i % 2) + 1)}
+                                class="bg-white p-7 flex flex-col gap-3"
+                            >
+                                <span class="text-viento" set:html={c.icon} />
+                                <h3 class="text-noche font-bold text-sm">
+                                    {c.titulo}
+                                </h3>
+                                <p class="text-[#4A6480] text-sm leading-[1.65]">
+                                    {c.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <!-- Legislación -->
+                <div data-reveal class="bg-noche rounded-2xl p-10">
+                    <p
+                        class="text-viento text-xs font-semibold tracking-widest uppercase mb-5"
+                    >
+                        Marco legal ambiental
+                    </p>
+                    <ul class="flex flex-col gap-3">
+                        {
+                            [
+                                "Ley General del Equilibrio Ecológico y la Protección al Ambiente (LGEEPA).",
+                                "Ley General para la Prevención y Gestión Integral de los Residuos (LGPGIR).",
+                                "NOM-052-SEMARNAT: Características y criterios de residuos peligrosos.",
+                                "Condicionantes de resolutivos de impacto ambiental por proyecto.",
+                                "Legislación ambiental estatal aplicable (Oaxaca y demás estados de operación).",
+                            ].map((n) => (
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1.5 w-2 h-2 rounded-full bg-viento shrink-0" />
+                                    <span class="text-niebla text-sm leading-[1.65]">
+                                        {n}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+                <p class="mt-10 text-xs text-[#4A6480]">
+                    Última revisión: octubre de 2024.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

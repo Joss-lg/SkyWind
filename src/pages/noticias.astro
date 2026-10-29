@@ -1,0 +1,235 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const noticias = [
+    {
+        fecha: "Octubre 2025",
+        categoria: "Empresa",
+        titulo: "Skywind obtiene certificación en sistema de gestión antisoborno",
+        resumen:
+            "Nuestra empresa concluye el proceso de certificación bajo la norma ISO 37001, reforzando nuestro compromiso con la integridad y la transparencia en todas las operaciones.",
+        color: "#1762D4",
+    },
+    {
+        fecha: "Agosto 2025",
+        categoria: "Proyectos",
+        titulo: "Arranque de nuevo parque eólico en el Istmo de Tehuantepec",
+        resumen:
+            "Skywind participa en la ejecución de obras civiles y electromecánicas del nuevo proyecto eólico en la región del Istmo, uno de los corredores eólicos más importantes de América Latina.",
+        color: "#0CBF82",
+    },
+    {
+        fecha: "Junio 2025",
+        categoria: "Sector",
+        titulo: "México supera los 30 GW de capacidad instalada en renovables",
+        resumen:
+            "El sector energético mexicano alcanza un hito histórico en capacidad de generación renovable. Skywind reafirma su compromiso de contribuir al crecimiento de esta industria.",
+        color: "#1762D4",
+    },
+    {
+        fecha: "Abril 2025",
+        categoria: "Empresa",
+        titulo: "Actualización de nuestro Código de Ética y Conducta",
+        resumen:
+            "Tras un proceso de revisión participativa con todo el equipo, publicamos la versión actualizada de nuestro Código de Ética, disponible para consulta de clientes y colaboradores.",
+        color: "#0CBF82",
+    },
+    {
+        fecha: "Febrero 2025",
+        categoria: "Proyectos",
+        titulo: "Conclusión de planta fotovoltaica en el noroeste del país",
+        resumen:
+            "Skywind termina la obra civil y electromecánica de una planta solar de 50 MW en Sonora, entregada en tiempo y dentro del presupuesto acordado con el cliente.",
+        color: "#1762D4",
+    },
+    {
+        fecha: "Noviembre 2024",
+        categoria: "Empresa",
+        titulo: "Apertura de operaciones en nuevos estados de la república",
+        resumen:
+            "Con la incorporación de nuevos proyectos en Tamaulipas, Jalisco y Veracruz, Skywind amplía su presencia geográfica y su equipo de profesionales en campo.",
+        color: "#0CBF82",
+    },
+];
+---
+
+<Layout
+    title="Noticias — Skywind México"
+    description="Novedades, proyectos y actualizaciones de Skywind México en el sector de energía renovable."
+>
+    <Nav />
+
+    <!-- Hero -->
+    <section class="bg-noche pt-40 pb-24 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_60%,rgba(23,98,212,0.15),transparent_60%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <p
+                class="hero-badge text-viento text-sm font-medium tracking-wide mb-4"
+            >
+                Noticias
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.035em] leading-[1.03] text-white mb-6 max-w-2xl text-balance"
+            >
+                Actualidad de Skywind
+            </h1>
+            <p class="hero-body text-niebla text-lg leading-[1.7] max-w-[44ch]">
+                Proyectos, certificaciones y novedades del sector de energía
+                renovable en México.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-alba">
+            <div class="max-w-container mx-auto px-6">
+                <!-- Artículo destacado -->
+                <article
+                    data-reveal
+                    class="bg-noche rounded-2xl overflow-hidden mb-10"
+                >
+                    <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-0">
+                        <div class="p-10 md:p-14">
+                            <div class="flex items-center gap-3 mb-5">
+                                <span
+                                    class="text-xs font-semibold px-2.5 py-1 rounded-full bg-cielo/20 text-cielo"
+                                >
+                                    {noticias[0].categoria}
+                                </span>
+                                <span class="text-niebla text-xs"
+                                    >{noticias[0].fecha}</span
+                                >
+                                <span class="text-viento text-xs font-semibold"
+                                    >Más reciente</span
+                                >
+                            </div>
+                            <h2
+                                class="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold tracking-tight text-white mb-4 max-w-xl leading-[1.15]"
+                            >
+                                {noticias[0].titulo}
+                            </h2>
+                            <p
+                                class="text-niebla leading-[1.7] mb-7 max-w-[52ch]"
+                            >
+                                {noticias[0].resumen}
+                            </p>
+                            <span
+                                class="inline-flex items-center gap-2 text-viento text-sm font-semibold"
+                            >
+                                Leer más
+                                <svg
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                    ><path
+                                        d="M3 8h10M9 4l4 4-4 4"
+                                        stroke="currentColor"
+                                        stroke-width="1.75"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"></path></svg
+                                >
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Grid de noticias -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    {
+                        noticias.slice(1).map((n, i) => (
+                            <article
+                                data-reveal
+                                data-delay={String((i % 3) + 1)}
+                                class="bg-white border border-[#D5E2F0] rounded-xl p-7 flex flex-col gap-4 hover:border-cielo hover:shadow-[0_0_0_1px_#1762D420] transition-all group cursor-pointer"
+                            >
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="text-xs font-semibold px-2.5 py-1 rounded-full"
+                                        style={`background: ${n.color}15; color: ${n.color}`}
+                                    >
+                                        {n.categoria}
+                                    </span>
+                                    <span class="text-niebla text-xs">
+                                        {n.fecha}
+                                    </span>
+                                </div>
+                                <h3 class="text-noche font-bold leading-[1.25] group-hover:text-cielo transition-colors">
+                                    {n.titulo}
+                                </h3>
+                                <p class="text-[#4A6480] text-sm leading-[1.65] flex-1">
+                                    {n.resumen}
+                                </p>
+                                <span
+                                    class="text-sm font-semibold flex items-center gap-1.5 mt-1"
+                                    style={`color: ${n.color}`}
+                                >
+                                    Leer más
+                                    <svg
+                                        width="13"
+                                        height="13"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M3 8h10M9 4l4 4-4 4"
+                                            stroke="currentColor"
+                                            stroke-width="1.75"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </span>
+                            </article>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- Suscripción -->
+        <section class="bg-noche py-20">
+            <div class="max-w-container mx-auto px-6 text-center">
+                <h2
+                    class="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold tracking-tight text-white mb-3"
+                >
+                    Mantente informado
+                </h2>
+                <p class="text-niebla text-lg mb-8 max-w-[38ch] mx-auto">
+                    Suscríbete para recibir novedades sobre proyectos y el
+                    sector renovable en México.
+                </p>
+                <form
+                    class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto"
+                    onsubmit="this.reset(); document.getElementById('sub-ok').classList.remove('hidden'); return false;"
+                >
+                    <input
+                        type="email"
+                        required
+                        placeholder="correo@empresa.com"
+                        class="flex-1 px-4 py-3 rounded-md bg-oceano border border-borde text-white placeholder:text-niebla text-sm focus:outline-none focus:border-cielo transition-colors"
+                    />
+                    <button
+                        type="submit"
+                        class="px-6 py-3 rounded-md bg-cielo text-white font-bold text-sm hover:bg-blue-700 transition-colors shrink-0"
+                    >
+                        Suscribirse
+                    </button>
+                </form>
+                <p id="sub-ok" class="hidden mt-4 text-viento text-sm">
+                    ¡Gracias! Te tendremos al tanto de las novedades.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

@@ -1,0 +1,348 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+// Valores reales del sitio skywindmexico.com
+const valores = [
+    {
+        titulo: "Eficiencia",
+        desc: "Optimizamos cada recurso y proceso para entregar proyectos de alta calidad en el menor tiempo posible, sin comprometer la seguridad.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Innovación",
+        desc: "Adoptamos tecnologías y metodologías de vanguardia para ofrecer soluciones más competitivas y sostenibles en cada proyecto.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707M6 20h12M9 17a5 5 0 01-2-4 5 5 0 015-5 5 5 0 015 5 5 5 0 01-2 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Disciplina",
+        desc: "Cumplimos nuestros compromisos con rigor y constancia. Los plazos, presupuestos y estándares acordados son nuestra palabra.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Lealtad",
+        desc: "Construimos relaciones a largo plazo con clientes, colaboradores y comunidades basadas en la confianza y el respeto mutuo.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Responsabilidad social",
+        desc: "Contribuimos activamente al desarrollo de las comunidades donde operamos, minimizando el impacto ambiental de nuestras operaciones.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        titulo: "Actitud de servicio",
+        desc: "Orientamos cada decisión hacia las necesidades del cliente. La calidad de la experiencia es tan importante como el resultado técnico.",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+];
+
+const hitos = [
+    {
+        año: "2022",
+        texto: "Fundación de Skywind México y primeros proyectos eólicos en el Istmo de Tehuantepec, Oaxaca.",
+    },
+    {
+        año: "2023",
+        texto: "Expansión a energía solar e hidroeléctrica. Incorporación de obra civil como cuarta especialidad.",
+    },
+    {
+        año: "2024",
+        texto: "Consolidación en el sector público y privado. Certificación en sistema de gestión antisoborno ISO 37001.",
+    },
+    {
+        año: "2025",
+        texto: "Crecimiento del equipo técnico y ampliación de operaciones a nuevos estados de la república.",
+    },
+];
+---
+
+<Layout
+    title="Acerca de Skywind — Quiénes Somos"
+    description="Conoce la historia, misión y valores de Skywind México, empresa de construcción y mantenimiento de proyectos de energía renovable."
+>
+    <Nav />
+
+    <!-- Hero interior -->
+    <section class="bg-noche pt-40 pb-28 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(23,98,212,0.14),transparent_65%)]"
+            aria-hidden="true"
+        >
+        </div>
+        <!-- Turbina decorativa -->
+        <div
+            class="absolute right-[4%] top-1/2 -translate-y-1/2 w-[420px] h-[420px] opacity-[0.04] hidden lg:block pointer-events-none"
+            aria-hidden="true"
+        >
+            <svg viewBox="0 0 200 200" fill="white" class="w-full h-full">
+                <circle cx="100" cy="100" r="7"></circle>
+                <g
+                    style="transform-origin:100px 100px"
+                    class="animate-spin-blade2"
+                >
+                    <path d="M100 93L95 30Q93 8 100 8Q107 8 105 30Z"></path>
+                </g>
+                <g
+                    style="transform-origin:100px 100px"
+                    class="animate-spin-blade3"
+                >
+                    <path
+                        d="M100 107L162 152Q178 165 172 174Q166 183 154 172Z"
+                        opacity=".7"></path>
+                </g>
+                <g
+                    style="transform-origin:100px 100px"
+                    class="animate-spin-blade"
+                >
+                    <path
+                        d="M100 107L38 152Q22 165 28 174Q34 183 46 172Z"
+                        opacity=".5"></path>
+                </g>
+            </svg>
+        </div>
+        <div
+            class="absolute bottom-0 left-0 right-0 h-px bg-borde"
+            aria-hidden="true"
+        >
+        </div>
+        <div class="max-w-container mx-auto px-6 relative z-10">
+            <p
+                class="hero-badge text-viento text-xs font-semibold tracking-widest uppercase mb-5"
+            >
+                Acerca de Skywind
+            </p>
+            <h1
+                class="hero-h1 text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.035em] leading-[1.03] text-white mb-6 text-balance max-w-3xl"
+            >
+                Construimos el futuro energético de México
+            </h1>
+            <p class="hero-body text-niebla text-lg leading-[1.7] max-w-[50ch]">
+                Empresa mexicana especializada en construcción y mantenimiento
+                de infraestructura para proyectos de energía renovable, con
+                presencia en el sector público y privado desde 2022.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Misión y visión -->
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-alba">
+            <div
+                class="max-w-container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"
+            >
+                <div
+                    data-reveal="scale"
+                    class="grid grid-cols-2 gap-px bg-[#D5E2F0] border border-[#D5E2F0] rounded-2xl overflow-hidden"
+                >
+                    {
+                        [
+                            {
+                                value: "2022",
+                                label: "Fundación",
+                                color: "text-cielo",
+                            },
+                            {
+                                value: "4",
+                                label: "Especialidades",
+                                color: "text-viento",
+                            },
+                            {
+                                value: "MX",
+                                label: "Presencia nacional",
+                                color: "text-cielo",
+                            },
+                            {
+                                value: "ISO",
+                                label: "Gestión certificada",
+                                color: "text-viento",
+                            },
+                        ].map((s) => (
+                            <div class="bg-white p-8 flex flex-col gap-2 group hover:bg-[#F7FBFF] transition-colors">
+                                <span
+                                    class={`text-[2.5rem] font-extrabold tracking-tight leading-none ${s.color} transition-transform duration-300 group-hover:scale-105 inline-block`}
+                                >
+                                    {s.value}
+                                </span>
+                                <span class="text-xs text-[#4A6480] leading-snug font-medium">
+                                    {s.label}
+                                </span>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <div class="lg:pt-2">
+                    <p
+                        data-reveal
+                        class="text-xs font-semibold tracking-widest uppercase text-cielo mb-5"
+                    >
+                        Nuestra razón de ser
+                    </p>
+                    <div
+                        data-reveal
+                        data-delay="1"
+                        class="mb-10 pb-10 border-b border-[#D5E2F0]"
+                    >
+                        <h2
+                            class="text-2xl font-extrabold tracking-tight text-noche mb-4"
+                        >
+                            Misión
+                        </h2>
+                        <p class="text-[#4A6480] leading-[1.75]">
+                            Realizar obras y servicios de construcción y
+                            mantenimiento en proyectos de energía renovable con
+                            los más altos estándares de calidad, seguridad y
+                            responsabilidad ambiental, contribuyendo al
+                            desarrollo sostenible de México.
+                        </p>
+                    </div>
+                    <div data-reveal data-delay="2">
+                        <h2
+                            class="text-2xl font-extrabold tracking-tight text-noche mb-4"
+                        >
+                            Visión
+                        </h2>
+                        <p class="text-[#4A6480] leading-[1.75]">
+                            Ser un recurso esencial para sus grupos de interés,
+                            actuando con integridad y profesionalismo, y
+                            contribuyendo a la transición energética de México
+                            con proyectos de clase mundial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valores -->
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-noche">
+            <div class="max-w-container mx-auto px-6">
+                <header class="mb-14" data-reveal>
+                    <p
+                        class="text-viento text-xs font-semibold tracking-widest uppercase mb-4"
+                    >
+                        Lo que nos define
+                    </p>
+                    <h2
+                        class="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-white"
+                    >
+                        Nuestros valores
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-borde border border-borde rounded-xl overflow-hidden"
+                >
+                    {
+                        valores.map((v, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String((i % 3) + 1)}
+                                class="bg-oceano p-8 flex flex-col gap-5 hover:bg-[#122C48] transition-colors group"
+                            >
+                                <span
+                                    class="text-viento opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 inline-block"
+                                    set:html={v.icon}
+                                />
+                                <div>
+                                    <h3 class="text-white font-bold mb-2 leading-snug">
+                                        {v.titulo}
+                                    </h3>
+                                    <p class="text-niebla text-sm leading-[1.65]">
+                                        {v.desc}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- Historia / Hitos -->
+        <section class="py-[clamp(5rem,10vw,9rem)] bg-alba">
+            <div class="max-w-container mx-auto px-6">
+                <header class="mb-14" data-reveal>
+                    <p
+                        class="text-cielo text-xs font-semibold tracking-widest uppercase mb-4"
+                    >
+                        Nuestra trayectoria
+                    </p>
+                    <h2
+                        class="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-noche"
+                    >
+                        Historia
+                    </h2>
+                </header>
+                <div class="flex flex-col relative">
+                    <div
+                        class="absolute left-[5.5rem] top-0 bottom-0 w-px bg-[#D5E2F0] hidden sm:block"
+                        aria-hidden="true"
+                    >
+                    </div>
+                    {
+                        hitos.map((h, i) => (
+                            <div
+                                data-reveal
+                                data-delay={String(i + 1)}
+                                class="flex gap-8 items-start py-8 border-b border-[#D5E2F0] last:border-0 group"
+                            >
+                                <span class="text-cielo font-bold text-base w-16 shrink-0 pt-0.5 text-right tabular-nums">
+                                    {h.año}
+                                </span>
+                                <div class="sm:pl-8 flex-1">
+                                    <div
+                                        class="w-8 h-0.5 bg-cielo mb-4 hidden sm:block transition-all duration-500 group-[.in-view]:w-14"
+                                        aria-hidden="true"
+                                    />
+                                    <p class="text-[#4A6480] leading-[1.7]">
+                                        {h.texto}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-cielo py-20" data-reveal>
+            <div
+                class="max-w-container mx-auto px-6 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-8 items-center"
+            >
+                <div>
+                    <h2
+                        class="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold tracking-tight text-white mb-2"
+                    >
+                        ¿Tienes un proyecto de energía renovable?
+                    </h2>
+                    <p class="text-white/70">
+                        Cuéntanos sobre tu proyecto y te ayudamos a hacerlo
+                        realidad.
+                    </p>
+                </div>
+                <a
+                    href="/contacto"
+                    class="shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-white text-cielo font-bold hover:bg-alba transition-all hover:-translate-y-px"
+                >
+                    Iniciar conversación
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        aria-hidden="true"
+                        ><path
+                            d="M3 8h10M9 4l4 4-4 4"
+                            stroke="currentColor"
+                            stroke-width="1.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path></svg
+                    >
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
