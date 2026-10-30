@@ -8,10 +8,10 @@ const links = [
     label: 'Servicios',
     href: '/servicio',
     sub: [
-      { label: 'Energía Eólica',        href: '/eolica' },
-      { label: 'Energía Solar',          href: '/energia-solar' },
-      { label: 'Energía Hidroeléctrica', href: '/energia-hidroelectrica' },
-      { label: 'Obra Civil',             href: '/obra-civil' },
+      { label: 'Energía Eólica',          href: '/eolica' },
+      { label: 'Energía Solar',           href: '/energia-solar' },
+      { label: 'Energía Hidroeléctrica',  href: '/energia-hidroelectrica' },
+      { label: 'Obra Civil',              href: '/obra-civil' },
     ],
   },
   { label: 'Clientes',  href: '/clientes' },
@@ -41,7 +41,6 @@ const serviceActive = links[2].sub!.some(s => isActive(s.href)) || isActive('/se
     <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-0.5 ml-auto" aria-label="Navegación principal">
       {links.map(l => l.sub ? (
-        <!-- Servicios con dropdown -->
         <div class="relative group/menu">
           <button
             class={`flex items-center gap-1 px-3 py-1.5 rounded text-sm font-medium transition-colors ${serviceActive ? 'text-white bg-white/10' : 'text-white/75 hover:text-white hover:bg-white/10'}`}
